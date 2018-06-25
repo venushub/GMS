@@ -1,9 +1,70 @@
 #bscontainer {
 	background-color : white;
-	border-width: 10px;
-	border-color: #6a0000;
+	border-color: #620000;
 	border-style: solid;
-	width : 1000px;
-	height : 500px;
-	font-size : 100px;
+	margin-top : 1%;
+	width : 95%;
 }
+
+#row1div {
+	border-style : solid;
+	border-color: #620000;
+	margin : 1px;
+}
+
+#row2div {
+	border-style : solid;
+	border-color: #620000;
+	margin : 1px;
+}
+
+#row2col6-1 {
+	width: 20%;
+	/* background-color: violet; */
+	border-color: #620000;
+	border-style: solid;
+	margin : 1px;
+}
+
+#row2col6-2 {
+	width: 79%;
+	/* background-color : green; */
+	border-color: #620000;
+	border-style: solid;
+	margin:1px;
+	
+}
+
+#sidenav {
+	/* background-color : grey; */
+	margin:1px
+}
+
+#grhead {
+	background-color: #620000;
+	margin-top : 1px;
+	color: white;
+}
+
+#grng {
+	color: #620000; 
+	border-color: #620000;
+	border-style: solid;
+}
+
+/* #grng:hover {
+	background-color: #620000;
+	color:white;
+} */
+
+#gral {
+	color : #620000;
+	border-color: #620000;
+	border-style: solid;
+	border-top-width : 0px;
+}
+
+/* #gral:hover {
+	background-color: #620000;
+	color:white;
+} */
