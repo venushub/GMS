@@ -33,9 +33,10 @@
 #ngrow2col6-2 {
 	width: 79%;
 	/* background-color : green; */
-	border-color: #620000;
+	border-color: white;
 	border-style: solid;
 	margin:1px;
+	position : relative;
 	
 	
 }
@@ -133,6 +134,19 @@ a {
 	border-style : solid;
 }
  */
+ 
+#formheading {
+	background-color: #620000;
+	color: white;
+}
+
+#formdiv {
+    width : 400px;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
 
 
 

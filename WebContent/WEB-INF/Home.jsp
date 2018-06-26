@@ -28,7 +28,7 @@
 				</div>
 			</div>
 			<div class="col-sm-6 text-center" id="agrow2col6-2">
-			<table id="tablemain">
+			<table id="tablemain" class="table-responsive-sm">
 			<tr id="tableheaderrow">
 				<th id="tableheadercolumn">One</th>
 				<th id="tableheadercolumn">Two</th>
