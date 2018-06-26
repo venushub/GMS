@@ -1,24 +1,28 @@
-#bscontainer {
+#ngbscontainer {
 	background-color : white;
-	border-color: #620000;
+	border-color: white;
 	border-style: solid;
-	margin-top : 1%;
-	width : 95%;
+	margin-top : 0%;
+	width : 100%;
 }
 
-#row1div {
+#ngrow1div {
 	border-style : solid;
 	border-color: white;
 	margin : 1px;
 }
 
-#row2div {
+#ngrow2div {
 	border-style : solid;
 	border-color: white;
 	margin : 1px;
 }
 
-#row2col6-1 {
+#footerdiv {
+	background-color : #620000;
+}
+
+#ngrow2col6-1 {
 	width: 20%;
 	/* background-color: violet; */
 	border-color: white;
@@ -26,13 +30,19 @@
 	margin : 1px;
 }
 
-#row2col6-2 {
+#ngrow2col6-2 {
 	width: 79%;
 	/* background-color : green; */
-	border-color: white;
+	border-color: #620000;
 	border-style: solid;
 	margin:1px;
 	
+	
+}
+
+#footercol12-1div {
+	background-color : #620000;
+	color: white;
 }
 
 #sidenav {
@@ -47,26 +57,38 @@
 }
 
 #grng {
-	color: #620000; 
+	color : white;
 	border-color: #620000;
 	border-style: solid;
+	border-top-width : 0px;
+	background-color : #9f0000;
 }
 
-/* #grng:hover {
-	background-color: #620000;
-	color:white;
-} */
 
-#gral {
+a {
 	color : #620000;
+}
+
+#grag:hover,a:hover {
+	color:white;
+	text-decoration : none;
+	background-color : #9f0000;
+	
+}
+
+#grag {
+	color: #620000; 
 	border-color: #620000;
 	border-style: solid;
 	border-top-width : 0px;
 }
 
+
+/* 
+
 #tablerow {
 	height : 50px;
-	/* border-style : solid; */
+	border-style : solid;
 }
 
 #tablecolumn {
@@ -82,15 +104,35 @@
 	background-color : #620000;
 	color : white;
 	height: 50px;
-	/* border-style : solid; */
+	border-style : solid;
 }
 
 #tablemain {
 	margin : 5px;
-	/* border-style : solid ; */
+	border-style : solid ;
 }
 
-/* #gral:hover {
+#gral:hover {
 	background-color: #620000;
 	color:white;
 } */
+
+/* #formrowdiv1 {
+	border-style : solid;
+}
+
+#formrowdiv2 {
+	border-style : solid;
+}
+
+#formrowdiv3 {
+	border-style : solid;
+}
+
+#formrowdiv4 {
+	border-style : solid;
+}
+ */
+
+
+

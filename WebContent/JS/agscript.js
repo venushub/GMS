@@ -1,8 +1,8 @@
-const gral = document.getElementById('gral');
+/*const gral = document.getElementById('gral');
 console.log(gral);
 gral.style.backgroundColor = "#9f0000";
 gral.style.color = "white";
-
+*/
 
 function func1(grng) {
 	grng.style.backgroundColor = "#9f0000";
@@ -24,3 +24,13 @@ function bordernormal(grng) {
 	grng.style.borderColor = "white"
 
 }*/
+/*
+function resize()
+{
+    var heights = window.innerHeight;
+    document.getElementById("agbscontainer").style.height = heights + "px";
+}
+resize();
+window.onresize = function() {
+    resize();
+};*/

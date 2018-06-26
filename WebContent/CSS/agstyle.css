@@ -1,0 +1,117 @@
+#agbscontainer {
+	background-color : white;
+	border-color: #620000;
+	border-style: solid;
+	margin-top : 0%;
+	width : 100%;
+}
+
+#agrow1div {
+	border-style : solid;
+	border-color: white;
+	margin : 1px;
+}
+
+#agrow2div {
+	border-style : solid;
+	border-color: white;
+	margin : 1px;
+}
+
+
+#footerdiv {
+	background-color : #620000;
+}
+
+#agrow2col6-1 {
+	width: 20%;
+	/* background-color: violet; */
+	border-color: white;
+	border-style: solid;
+	margin : 1px;
+}
+
+#agrow2col6-2 {
+	width: 79%;
+	/* background-color : green; */
+	border-color: white;
+	border-style: solid;
+	margin:1px;
+	
+}
+
+#footercol12-1div {
+	background-color : #620000;
+	color: white;
+}
+
+#sidenav {
+	/* background-color : grey; */
+	margin:1px
+}
+
+#grhead {
+	background-color: #620000;
+	margin-top : 1px;
+	color: white;
+}
+
+#grng {
+	color: #620000; 
+	border-color: #620000;
+	border-style: solid;
+}
+
+
+a {
+	color : #620000;
+}
+
+#grng:hover,a:hover {
+	color:white;
+	text-decoration : none;
+	background-color : #9f0000;
+	
+}
+
+#grag {
+	color : white;
+	border-color: #620000;
+	border-style: solid;
+	border-top-width : 0px;
+	background-color : #9f0000;
+}
+
+
+
+
+#tablerow {
+	height : 50px;
+	/* border-style : solid; */
+}
+
+#tablecolumn {
+	width : 25% ;
+}
+
+#tableheadercolumn {
+	text-align : center;
+	width : 25%;
+}
+
+#tableheaderrow {
+	background-color : #620000;
+	color : white;
+	height: 50px;
+	/* border-style : solid; */
+}
+
+#tablemain {
+	margin : 5px;
+	/* border-style : solid ; */
+}
+
+/* #gral:hover {
+	background-color: #620000;
+	color:white;
+} */

@@ -10,24 +10,24 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="./CSS/singlestyle.css">
+	<link rel="stylesheet" href="./CSS/agstyle.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>
-	<div class="container" id="bscontainer">
-		<div class="row" id="row1div">
+	<div class="container" id="agbscontainer">
+		<div class="row" id="agrow1div">
 			<div class="col-sm-12 text-center"><h3>Welcome ${username}</h3></div>
 		</div>
-		<div class="row" id="row2div">
-			<div class="col-sm-6 text-center" id="row2col6-1">
+		<div class="row" id="agrow2div">
+			<div class="col-sm-6 text-center" id="agrow2col6-1">
 				<div id="sidenav">
 					<div id="grhead">Grievances</div>
-					<div id="grng" onmouseover="func1(this)" onmouseout="func2(this)">New Grievance</div>
-					<div id="gral">All Grievances</div>
+					<div id="grng"><a href="newgrievance">New Grievance</a></div>
+					<div id="grag">All Grievances</div>
 
 				</div>
 			</div>
-			<div class="col-sm-6 text-center" id="row2col6-2">
+			<div class="col-sm-6 text-center" id="agrow2col6-2">
 			<table id="tablemain">
 			<tr id="tableheaderrow">
 				<th id="tableheadercolumn">One</th>
@@ -46,10 +46,11 @@
 			</c:forEach>
 			</table>
 			</div>
-			
 		</div>
-		
+		<!-- <div class="row" id="footerdiv">
+			<div class="col-sm-12" id="footercol12-1div">©NSDL | Site Map | Help Desk</div>
+		</div> -->
 	</div>
 </body>
-<script type="text/javascript" src="./JS/homescript.js"></script>
+<script type="text/javascript" src="./JS/agscript.js"></script>
 </html>

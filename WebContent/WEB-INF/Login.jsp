@@ -20,10 +20,12 @@
 				<div class="col-sm-4">
 					<form action="checklogin" method="post">
 						<div class="form-group">
-					    	<input class="form-control" type="text" name="username">
+							<label for="username">Username:</label>
+					    	<input class="form-control" type="text" name="username" id="username">
 					    </div>
 					    <div class="form-group">
-					    	<input class="form-control" type="password" name="password">
+					    	<label for="password">Password:</label>
+					    	<input class="form-control" type="password" name="password" id="password">
 					    </div>
 					    <button type="submit" class="btn btn-primary" value="login" >Submit</button>
 					</form>
