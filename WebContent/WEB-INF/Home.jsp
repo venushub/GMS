@@ -16,7 +16,7 @@
 <body>
 	<div class="container" id="bscontainer">
 		<div class="row" id="row1div">
-			<div class="col-sm-12 text-center">Welcome ${username}</div>
+			<div class="col-sm-12 text-center"><h3>Welcome ${username}</h3></div>
 		</div>
 		<div class="row" id="row2div">
 			<div class="col-sm-6 text-center" id="row2col6-1">
@@ -28,11 +28,21 @@
 				</div>
 			</div>
 			<div class="col-sm-6 text-center" id="row2col6-2">
-			<table>
-			<c:forEach var="j" begin="0" end="8">
-			<tr>
-				${tableelems} }
+			<table id="tablemain">
+			<tr id="tableheaderrow">
+				<th id="tableheadercolumn">One</th>
+				<th id="tableheadercolumn">Two</th>
+				<th id="tableheadercolumn">Three</th>
+				<th id="tableheadercolumn">Four</th>
 			</tr>
+			<c:forEach var="i" begin="0" end="8">
+				<tr id="tablerow" onmouseover="func1(this)" onmouseout="func2(this)">
+					<c:forEach var="j" begin="0" end="8">
+						<td id="tablecolumn">
+							${tableelems[i][j]}
+						</td>
+					</c:forEach>
+				</tr>
 			</c:forEach>
 			</table>
 			</div>

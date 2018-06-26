@@ -28,6 +28,7 @@ public class HomepageServ extends HttpServlet {
 		}
 		
 		request.setAttribute("tableelems", tableelems);
+		request.setAttribute("username", "venu");
 		request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
 	}
 }

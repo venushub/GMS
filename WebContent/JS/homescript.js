@@ -14,3 +14,13 @@ function func2(grng) {
 	grng.style.color = "#620000";
 }
 
+/*function bordersolid(grng) {	
+	grng.style.borderStyle = "solid";
+	grng.style.borderColor = "#620000"
+}
+
+function bordernormal(grng) {
+	grng.style.borderStyle = "none";
+	grng.style.borderColor = "white"
+
+}*/
