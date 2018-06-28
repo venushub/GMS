@@ -24,7 +24,6 @@
 					<div id="grhead">Grievances</div>
 					<div id="grng"><a href="newgrievance">New Grievance</a></div>
 					<div id="grag">All Grievances</div>
-
 				</div>
 			</div>
 			<div class="col-sm-6 text-center" id="agrow2col6-2">
@@ -35,9 +34,9 @@
 				<th id="tableheadercolumn">Three</th>
 				<th id="tableheadercolumn">Four</th>
 			</tr>
-			<c:forEach var="i" begin="0" end="8">
+			<c:forEach var="i" begin="0" end="${tableelems.size()}">
 				<tr id="tablerow" onmouseover="func1(this)" onmouseout="func2(this)">
-					<c:forEach var="j" begin="0" end="8">
+					<c:forEach var="j" begin="0" end="${tableelems[i].size()}">
 						<td id="tablecolumn">
 							${tableelems[i][j]}
 						</td>

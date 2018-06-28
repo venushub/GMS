@@ -107,8 +107,11 @@ a {
 }
 
 #tablemain {
+	display : block;
 	margin : 5px;
 	/* border-style : solid ; */
+	height : 400px;
+	overflow-y: scroll;
 }
 
 /* #gral:hover {
