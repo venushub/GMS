@@ -15,6 +15,7 @@ public class CheckLoginServ extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
         String password = request.getParameter("password");
+        
         if(username.equals("venu") && password.equals("madhav")){
         	response.sendRedirect("home");
         	//request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
@@ -22,7 +23,7 @@ public class CheckLoginServ extends HttpServlet {
         else {
             request.setAttribute("error", "Unknown user, please try again");
         	request.getRequestDispatcher("/WEB-INF/Login.jsp").forward(request, response);
-
+        	
         }
 	}
 }

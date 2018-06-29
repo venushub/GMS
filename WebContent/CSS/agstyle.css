@@ -1,15 +1,62 @@
-#agbscontainer {
+/* #agbscontainer {
 	background-color : white;
-	border-color: white;
+	border-color: #620000;
 	border-style: solid;
 	margin-top : 0%;
 	width : 100%;
 }
+ */
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border-style : solid;
+    border-color : #620000;
+    height : 95vh;
+    position : relative ;
+    margin-top : 1%;
+    
+}
+
+#emptyrow {
+	height:1%;
+}
 
 #agrow1div {
 	border-style : solid;
-	border-color: white;
-	margin : 1px;
+    border-color : #620000;
+	background-color:#620000;
+	height : 8%;
+}
+
+#agrow1col12 {
+	color:white;
+	text-transform : capitalize;
+	font-size : 20px;
+	margin : 5px;
+	/* width : 95%; */
+	/* background-color:pink; */
+	vertical-align : middle;
+	
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+    border-style:solid;
+	border-right-width : 0px;
+    border-top-width: 0px;
+    border-bottom-width : 0px; 
+    border-color : #620000;
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9f0000; 
+    border-color : white;
+    width: 80%;
+    
 }
 
 #agrow2div {
@@ -18,17 +65,12 @@
 	margin : 1px;
 }
 
-
-#footerdiv {
-	background-color : #620000;
-}
-
 #agrow2col6-1 {
 	width: 20%;
 	/* background-color: violet; */
 	border-color: white;
 	border-style: solid;
-	margin : 1px;
+	
 }
 
 #agrow2col6-2 {
@@ -38,6 +80,15 @@
 	border-style: solid;
 	margin:1px;
 	
+}
+
+
+#footerdiv {
+	background-color : #620000;
+	position : absolute;
+	bottom : 0;
+	width:100%;
+	text-align : center;
 }
 
 #footercol12-1div {
@@ -52,7 +103,6 @@
 
 #grhead {
 	background-color: #620000;
-	margin-top : 1px;
 	color: white;
 }
 
@@ -108,8 +158,9 @@ a {
 
 #tablemain {
 	display : block;
-	margin : 5px;
-	/* border-style : solid ; */
+	/* margin : 5px; */
+	border-style : solid ;
+	border-color : #620000;
 	height : 400px;
 	overflow-y: scroll;
 }

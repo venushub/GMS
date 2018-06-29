@@ -14,6 +14,12 @@ function func2(grng) {
 	grng.style.color = "#620000";
 }
 
+
+/*document.getElementById("agbscontainer").style.height = 95 + "vh";*/
+
+
+console.log(screen.height);
+
 /*function bordersolid(grng) {	
 	grng.style.borderStyle = "solid";
 	grng.style.borderColor = "#620000"

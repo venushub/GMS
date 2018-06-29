@@ -16,10 +16,11 @@
 <body>
 	<div class="container" id="agbscontainer">
 		<div class="row" id="agrow1div">
-			<div class="col-sm-12 text-center"><h3>Welcome ${username}</h3></div>
+			<div class="col-sm-offset-12 text-center" id="agrow1col12">Welcome ${username}</div>
 		</div>
+		<div class="row" id="emptyrow"></div>
 		<div class="row" id="agrow2div">
-			<div class="col-sm-6 text-center" id="agrow2col6-1">
+			<div class="col-sm-6 text-center align-center" id="agrow2col6-1">
 				<div id="sidenav">
 					<div id="grhead">Grievances</div>
 					<div id="grng"><a href="newgrievance">New Grievance</a></div>
@@ -46,9 +47,9 @@
 			</table>
 			</div>
 		</div>
-		<!-- <div class="row" id="footerdiv">
+		<div class="row" id="footerdiv">
 			<div class="col-sm-12" id="footercol12-1div">©NSDL | Site Map | Help Desk</div>
-		</div> -->
+		</div>
 	</div>
 </body>
 <script type="text/javascript" src="./JS/agscript.js"></script>
