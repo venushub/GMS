@@ -16,8 +16,9 @@
 <body>
 	<div class="container" id="ngbscontainer">
 		<div class="row" id="ngrow1div">
-			<div class="col-sm-12 text-center"><h3>Welcome ${username}</h3></div>
+			<div class="col-sm-offset-12 text-center"  id="ngrow1col12">Welcome ${username}</div>
 		</div>
+		<div class="row" id="emptyrow"></div>
 		<div class="row" id="ngrow2div">
 			<div class="col-sm-6 text-center" id="ngrow2col6-1">
 				<div id="sidenav">
@@ -27,7 +28,7 @@
 				</div>
 			</div>
 			<div class="col-sm-6 text-center" id="ngrow2col6-2">
-				<div id="formheading"><h3>Please Fill in Grievance details</h3></div>
+				<!-- <div id="formheading"><h3>Please Fill in Grievance details</h3></div> -->
 				<div id="formdiv">
 					<form action="createnewgrievance" method="post">
 						<!-- <div id="formrowdiv1" style="float:left">
@@ -80,9 +81,9 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="row" id="footerdiv">
+		<div class="row" id="footerdiv">
 			<div class="col-sm-12" id="footercol12-1div">©NSDL | Site Map | Help Desk</div>
-		</div> -->
+		</div>
 	</div>
 </body>
 <script type="text/javascript" src="./JS/ngscript.js"></script>

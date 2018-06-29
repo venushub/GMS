@@ -1,16 +1,51 @@
-#ngbscontainer {
+/* #ngbscontainer {
 	background-color : white;
 	border-color: white;
 	border-style: solid;
 	margin-top : 0%;
 	width : 100%;
+} */
+
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border-style : solid;
+    border-color : #620000;
+    height : 95vh;
+    position : relative ;
+    margin-top : 1%;
+
 }
+
+#emptyrow {
+	height:1%;
+}
+
 
 #ngrow1div {
 	border-style : solid;
-	border-color: white;
-	margin : 1px;
+	border-color: #620000;
+	background-color:#620000;
+	height : 8%;
+	
 }
+
+#ngrow1col12 {
+	color:white;
+	text-transform : capitalize;
+	font-size : 20px;
+	margin : 5px;
+	vertical-align : middle;
+}
+
+/* .vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+} */
 
 #ngrow2div {
 	border-style : solid;
@@ -27,18 +62,25 @@
 	/* background-color: violet; */
 	border-color: white;
 	border-style: solid;
-	margin : 1px;
 }
 
 #ngrow2col6-2 {
 	width: 79%;
 	/* background-color : green; */
-	border-color: white;
+	border-color: #620000;
 	border-style: solid;
 	margin:1px;
 	position : relative;
 	
 	
+}
+
+#footerdiv {
+	background-color : #620000;
+	position : absolute;
+	bottom : 0;
+	width:100%;
+	text-align : center;
 }
 
 #footercol12-1div {
@@ -146,6 +188,7 @@ a {
     margin: 0 auto;
     padding: 10px;
     position: relative;
+
 }
 
 
