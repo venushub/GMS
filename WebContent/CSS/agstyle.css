@@ -7,8 +7,10 @@
 }
  */
 
-
-
+#welcome {
+	color : white;
+	font-size : 25px;
+}
 
 .container {
     padding-right: 15px;
@@ -31,20 +33,43 @@
 #agrow1div {
 	border-style : solid;
     border-color : #620000;
-	background-color:#620000;
-	height : 8%;
+	background-color:#620000;	
+	/* height : 8%; */
 }
 
-#agrow1col12 {
-	color:white;
+#agrow1col6-1 {
+	display: inline-block;  
+    vertical-align: middle;
+	color : white;
 	text-transform : capitalize;
 	font-size : 20px;
 	margin : 5px;
 	/* width : 95%; */
 	/* background-color:pink; */
 	vertical-align : middle;
-	
 }
+
+#agrow1co6-2 {
+	display: inline-block;
+    vertical-align: middle;
+}
+
+.button {
+    background-color: #620000;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+}
+
+.button:hover {
+    background-color: white;
+    color: #620000;
+}
+
 
 ::-webkit-scrollbar {
     width: 20px;

@@ -13,10 +13,14 @@
 	<link rel="stylesheet" href="./CSS/agstyle.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
-<body>
+<body id="index">
 	<div class="container" id="agbscontainer">
 		<div class="row" id="agrow1div">
-			<div class="col-sm-offset-12 text-center" id="agrow1col12">Welcome ${username}</div>
+		<%-- 
+			<div class="col-sm-offset-12 text-center" id="agrow1co6-1">Welcome ${username}</div>
+			<div class="col-sm-offset-12 text-center" id="agrow1co6-2"><button>Hello</button></div> --%>
+			<div class="col-sm-6 text-right" id="agrow1co6-1"><div id="welcome">Welcome ${username}</div></div>
+			<div class="col-sm-6 text-right align-middle" id="agrow1co6-2"><div id="logoutbuttondiv"><button class="button" id="logoutbutton">Logout</button></div></div>			
 		</div>
 		<div class="row" id="emptyrow"></div>
 		<div class="row" id="agrow2div">
