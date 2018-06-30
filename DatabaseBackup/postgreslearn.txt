@@ -1,0 +1,25 @@
+postgres learning
+
+create schema Grievance;
+create table Grievance.grievance_main();
+ALTER TABLE Grievance.grievance_main ADD COLUMN user_name varchar(30);
+
+CREATE TABLE grievance.grievance_main (
+    gr_id integer NOT NULL PRIMARY KEY,
+    user_id integer NOT NULL,
+    gr_type character(5),
+    gr_msg character(150),
+    gr_time_stamp timestamp without time zone
+);
+
+
+
+CREATE TABLE grievance.user_main
+(
+  user_id integer NOT NULL,
+  user_name character(1) NOT NULL,
+  user_email character(50),
+  user_password character(150),
+  gr_time_stamp timestamp without time zone,
+  CONSTRAINT user_main_pkey PRIMARY KEY (user_id)
+)

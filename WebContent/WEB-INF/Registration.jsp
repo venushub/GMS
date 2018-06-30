@@ -14,17 +14,21 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="row"><div class="col-sm-12 text-center" style="height:80px"><h2>Please enter your login credentials</h2></div></div>
+			<div class="row"><div class="col-sm-12 text-center" style="height:80px"><h2>Please enter your Registration credentials</h2></div></div>
 			<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
-					<form action="checklogin" method="post">
+					<form action="newuserregister" method="post">
 						<div class="form-group">
-							<label for="username">Username:</label>
-					    	<input class="form-control" type="text" name="username" id="username">
+							<label for="name">Your Good Name</label>
+					    	<input class="form-control" type="text" name="name" id="name">
+					    </div>
+						<div class="form-group">
+							<label for="username">Email as Username</label>
+					    	<input class="form-control" type="email" name="email" id="email">
 					    </div>
 					    <div class="form-group">
-					    	<label for="password">Password:</label>
+					    	<label for="password">Set Password:</label>
 					    	<input class="form-control" type="password" name="password" id="password">
 					    </div>
 					    <button type="submit" class="btn btn-primary" value="login" >Submit</button>
@@ -33,9 +37,6 @@
 				<div class="col-sm-4"></div>
 			</div>
 			<div class="row"><div class="col-sm-12 text-center" style="height:30px"></div></div>
-			<div class="row"><div class="col-sm-12 text-center"><a href="registration">New Registration</a></div></div>
-			<div class="row"><div class="col-sm-12 text-center" style="height:30px"></div></div>
-			
 			<div class="row">
 				<div class="col-sm-12 text-center" ><p style="color:red">${error}</p></div>
 		</div>

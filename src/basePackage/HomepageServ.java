@@ -70,17 +70,8 @@ public class HomepageServ extends HttpServlet {
 		} catch (SQLException e) {
 	        System.out.println(e);
 		}
-        
-        
-        
-        
-        
-        
-        
-        
-		
+      
 		request.setAttribute("tableelems", tableelems);
-		request.setAttribute("username", "venu");
 		request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
 	}
 }

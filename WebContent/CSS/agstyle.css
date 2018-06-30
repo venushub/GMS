@@ -7,6 +7,9 @@
 }
  */
 
+
+
+
 .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -17,6 +20,7 @@
     height : 95vh;
     position : relative ;
     margin-top : 1%;
+    background-color : white;
     
 }
 
@@ -79,7 +83,6 @@
 	border-color: white;
 	border-style: solid;
 	margin:1px;
-	
 }
 
 

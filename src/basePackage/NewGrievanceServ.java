@@ -14,8 +14,8 @@ public class NewGrievanceServ extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/*HttpSession session = request.getSession(false);
 		session.setAttribute("username", "venu");*/
-		request.setAttribute("username", "venu");
-		request.setAttribute("userid", "1234");
+/*		request.setAttribute("username", "venu");
+		request.setAttribute("userid", "1234");*/
 		request.getRequestDispatcher("/WEB-INF/newgrievance.jsp").forward(request, response);
 	}
 }
