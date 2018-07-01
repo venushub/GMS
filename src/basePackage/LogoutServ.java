@@ -9,15 +9,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/login")
+@WebServlet("/logout")
 public class LogoutServ extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	HttpSession sesh = request.getSession();
+    	/*HttpSession sesh = request.getSession();
     	if(sesh != null){
-    		sesh.invalidate();
+    		System.out.println("session is alive");
     	}
-		request.getRequestDispatcher("/WEB-INF/Login.jsp").forward(request, response);
-	}
+    	System.out.println(sesh.getAttribute("username").toString());*/
+        request.getSession().invalidate();
+    	response.sendRedirect("login");
+/*		request.getRequestDispatcher("/WEB-INF/Login.jsp").forward(request, response);
+*/	}
 }

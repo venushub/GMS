@@ -17,6 +17,12 @@ public class NewGrievanceServ extends HttpServlet {
 		session.getAttribute("username", "venu");*/
 /*		request.setAttribute("username", "venu");
 		request.setAttribute("userid", "1234");*/
+		HttpSession sesh = request.getSession(false);
+		if(sesh != null){
+		System.out.println(sesh);
 		request.getRequestDispatcher("/WEB-INF/newgrievance.jsp").forward(request, response);
+		} else {
+			response.sendRedirect("login");
+		}
 	}
 }
