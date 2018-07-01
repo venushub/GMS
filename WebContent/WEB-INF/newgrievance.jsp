@@ -17,7 +17,7 @@
 	<div class="container" id="ngbscontainer">
 		<div class="row" id="ngrow1div">
 			<div class="col-sm-6 text-right" id="agrow1co6-1"><div id="welcome">Welcome ${username}</div></div>
-			<div class="col-sm-6 text-right align-middle" id="agrow1co6-2"><div id="logoutbuttondiv"><button class="button" id="logoutbutton">Logout</button></div></div>	
+			<div class="col-sm-6 text-right align-middle" id="agrow1co6-2"><div id="logoutbuttondiv"><a href="login"><button class="button" id="logoutbutton">Logout</button></a></div></div>	
 		</div>
 		<div class="row" id="emptyrow"></div>
 		<div class="row" id="ngrow2div">
@@ -25,7 +25,7 @@
 				<div id="sidenav">
 					<div id="grhead">Grievances</div>
 					<div id="grng">New Grievance</div>
-					<div id="grag"><a href="home">All Grievances</a></div>
+					<a href="home"><div id="grag">All Grievances</div></a>
 				</div>
 			</div>
 			<div class="col-sm-6 text-center" id="ngrow2col6-2">

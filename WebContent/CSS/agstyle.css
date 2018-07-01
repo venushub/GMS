@@ -23,7 +23,6 @@
     position : relative ;
     margin-top : 1%;
     background-color : white;
-    
 }
 
 #emptyrow {
@@ -58,11 +57,12 @@
     background-color: #620000;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 5px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     margin: 4px 2px;
+    font-weight : Bold;
 }
 
 .button:hover {
@@ -70,6 +70,14 @@
     color: #620000;
 }
 
+#logoutbutton a {
+	color : white;
+}
+
+#logoutbutton a:hover {
+	color : #620000;
+	text-decoration : none;
+}
 
 ::-webkit-scrollbar {
     width: 20px;
@@ -141,11 +149,11 @@
 }
 
 
-a {
+#sidenav a {
 	color : #620000;
 }
 
-#grng:hover,a:hover {
+#grng:hover,#sidenav a:hover {
 	color:white;
 	text-decoration : none;
 	background-color : #9f0000;

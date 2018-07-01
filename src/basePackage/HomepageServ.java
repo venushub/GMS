@@ -23,8 +23,11 @@ public class HomepageServ extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*HttpSession session = request.getSession(false);
-		session.setAttribute("username", "venu");*/
+		HttpSession session = request.getSession();
+		String username = session.getAttribute("username").toString();
+		String useremail = session.getAttribute("useremail").toString();
+		session.setAttribute("username", username);
+		session.setAttribute("useremail", useremail);
 		ArrayList<ArrayList> tableelems = new ArrayList<ArrayList>();
        /* for(int i=1;i<10;i++){
 		ArrayList<String> row = new ArrayList<String>();
@@ -34,7 +37,6 @@ public class HomepageServ extends HttpServlet {
 		row.add("four");
 		tableelems.add(row);
 		}*/
-        
         
         try {
 	           Class.forName("org.postgresql.Driver");
@@ -48,9 +50,7 @@ public class HomepageServ extends HttpServlet {
 		Statement stmt=con.createStatement();
 		ResultSet rs = stmt.executeQuery("select gr_type, gr_msg, gr_time_stamp from Grievance.grievance_main");
 		while(rs.next()){
-			
 
-			
 			ArrayList<String> row = new ArrayList<String>();
 			row.add(Integer.toString(i));
 			row.add(rs.getString("gr_type"));

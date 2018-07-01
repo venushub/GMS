@@ -18,6 +18,7 @@
     position : relative ;
     margin-top : 1%;
     background-color : white;
+    
 }
 
 #emptyrow {
@@ -66,11 +67,22 @@
     display: inline-block;
     margin: 4px 2px;
     font-sie : 15px;
+    font-weight : Bold;
+    
 }
 
 .button:hover {
     background-color: white;
     color: #620000;
+}
+
+#logoutbutton a {
+	color : white;
+}
+
+#logoutbutton a:hover {
+	color : #620000;
+	text-decoration : none;
 }
 
 
@@ -140,16 +152,14 @@
 	background-color : #9f0000;
 }
 
-
-a {
+ #sidenav a {
 	color : #620000;
 }
 
-#grag:hover,a:hover {
+#grag:hover,#sidenav a:hover {
 	color:white;
 	text-decoration : none;
 	background-color : #9f0000;
-	
 }
 
 #grag {
@@ -221,8 +231,6 @@ a {
     margin: 0 auto;
     padding: 10px;
     position: relative;
-    
-
 }
 
 

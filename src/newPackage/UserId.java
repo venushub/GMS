@@ -63,4 +63,30 @@ public class UserId {
 			}
 	}
 	
+	public String getUserNameForSession(String usrname){
+		
+		String dbusername = new String();
+		
+		try {
+	           Class.forName("org.postgresql.Driver");
+	    } catch (ClassNotFoundException e) {
+	           System.out.println("Class not found " + e);
+	    }
+		
+		try {
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
+			String query = "SELECT user_name FROM Grievance.user_main WHERE user_email=?";
+			PreparedStatement stmt=con.prepareStatement(query);	
+			stmt.setString(1, usrname);
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()){
+				dbusername = rs.getString(1);
+			}
+		    con.close();
+			} catch (SQLException e) {
+		        System.out.println(e);
+			}
+		return dbusername;
+	}
+	
 }

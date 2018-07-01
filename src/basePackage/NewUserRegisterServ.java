@@ -34,7 +34,7 @@ public class NewUserRegisterServ extends HttpServlet {
         }
         else {
             request.setAttribute("error", "email already exists in our database");
-        	request.getRequestDispatcher("/WEB-INF/registration.jsp").forward(request, response);
+        	request.getRequestDispatcher("/WEB-INF/Registration.jsp").forward(request, response);
         }
 	}
 }
