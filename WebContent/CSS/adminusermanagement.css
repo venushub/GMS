@@ -1,0 +1,263 @@
+/* #agbscontainer {
+	background-color : white;
+	border-color: #620000;
+	border-style: solid;
+	margin-top : 0%;
+	width : 100%;
+}
+ */
+
+#welcome {
+	color : white;
+	font-size : 25px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border-style : solid;
+    border-color : #620000;
+    height : 95vh;
+    position : relative ;
+    margin-top : 1%;
+    background-color : white;
+}
+
+#emptyrow {
+	height:1%;
+}
+
+#agrow1div {
+	border-style : solid;
+    border-color : #620000;
+	background-color:#620000;	
+	/* height : 8%; */
+}
+
+#agrow1col6-1 {
+	display: inline-block;  
+    vertical-align: middle;
+	color : white;
+	text-transform : capitalize;
+	font-size : 20px;
+	margin : 5px;
+	/* width : 95%; */
+	/* background-color:pink; */
+	vertical-align : middle;
+}
+
+#agrow1co6-2 {
+	display: inline-block;
+    vertical-align: middle;
+}
+
+.button {
+    background-color: #620000;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    font-weight : Bold;
+}
+
+.button:hover {
+    background-color: white;
+    color: #620000;
+}
+
+#logoutbutton a {
+	color : white;
+}
+
+#logoutbutton a:hover {
+	color : #620000;
+	text-decoration : none;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+    border-style:solid;
+	border-right-width : 0px;
+    border-top-width: 0px;
+    border-bottom-width : 0px; 
+    border-color : #620000;
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9f0000; 
+    border-color : white;
+    width: 80%;
+    
+}
+
+#agrow2div {
+	
+	border-color: #620000;
+	height : 7%;
+	border
+}
+
+#customeruser {
+	width : 50%;
+	border-style : solid;
+	border-color: #620000;
+	border-left-width : 0px;
+	border-right-width : 0px;
+	color : #620000;
+	font-weight : bold;
+}
+
+#customeruser:hover {
+	background-color : #9f0000;
+	color : white;
+}
+
+#agentuser {
+	width : 50%;
+	border-style : solid;
+	border-color: #620000;
+	border-right-width : 0px;
+	color : #620000;
+	font-weight : bold;
+}
+
+#agentuser:hover {
+	background-color : #9f0000;
+	color : white;
+}
+
+
+#mybutton {
+    background-color: white;
+    border-style : solid;
+    border-color : #620000;
+    color: #620000;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    font-weight : Bold;
+}
+
+#mybutton:hover {
+    background-color: #620000;
+    color: white;
+}
+
+
+/* #agrow2col6-1 {
+	width: 20%;
+	background-color: violet;
+	border-color: white;
+	border-style: solid;
+	
+}
+
+#agrow2col6-2 {
+	width: 79%;
+	background-color : green;
+	border-color: white;
+	border-style: solid;
+	margin:1px;
+} */
+
+#agrow2col12 {
+	border-style : solid;
+	border-color : white;
+}
+
+
+
+#footerdiv {
+	background-color : #620000;
+	position : absolute;
+	bottom : 0;
+	width:100%;
+	text-align : center;
+}
+
+#footercol12-1div {
+	background-color : #620000;
+	color: white;
+}
+
+/* #sidenav {
+	background-color : grey;
+	margin:1px
+} */
+
+/* #grhead {
+	background-color: #620000;
+	color: white;
+}
+
+#grng {
+	color: #620000; 
+	border-color: #620000;
+	border-style: solid;
+} */
+
+
+/* #sidenav a {
+	color : #620000;
+} */
+
+/* #grng:hover,#sidenav a:hover {
+	color:white;
+	text-decoration : none;
+	background-color : #9f0000;
+	
+}
+ */
+/* #grag {
+	color : white;
+	border-color: #620000;
+	border-style: solid;
+	border-top-width : 0px;
+	background-color : #9f0000;
+}
+ */
+
+
+
+/* #tablerow {
+	height : 50px;
+	border-style : solid;
+}
+
+#tablecolumn {
+	width : 25% ;
+}
+
+#tableheadercolumn {
+	text-align : center;
+	width : 25%;
+}
+
+#tableheaderrow {
+	background-color : #620000;
+	color : white;
+	height: 50px;
+	border-style : solid;
+}
+
+#tablemain {
+	display : block;
+	margin : 5px;
+	border-style : solid ;
+	border-color : #620000;
+	height : 400px;
+	overflow-y: scroll;
+}
+ */
+/* #gral:hover {
+	background-color: #620000;
+	color:white;
+} */
