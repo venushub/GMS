@@ -1,11 +1,16 @@
-/* #ngbscontainer {
+/* #agbscontainer {
 	background-color : white;
-	border-color: white;
+	border-color: #620000;
 	border-style: solid;
 	margin-top : 0%;
 	width : 100%;
-} */
+}
+ */
 
+#welcome {
+	color : white;
+	font-size : 25px;
+}
 
 .container {
     padding-right: 15px;
@@ -24,19 +29,11 @@
 	height:1%;
 }
 
-#welcome {
-	color : white;
-	font-size : 25px;
-}
-
-
-#ngrow1div {
+#agrow1div {
 	border-style : solid;
-	/* border-left-width : 0px;
-	border-right-width : 0px;
-	border-top-width : 0px; */
-	border-color: #620000;
-	background-color:#620000;
+    border-color : #620000;
+	background-color:#620000;	
+	/* height : 8%; */
 }
 
 #agrow1col6-1 {
@@ -65,9 +62,7 @@
     text-decoration: none;
     display: inline-block;
     margin: 4px 2px;
-    font-sie : 15px;
     font-weight : Bold;
-    
 }
 
 .button:hover {
@@ -84,40 +79,83 @@
 	text-decoration : none;
 }
 
+::-webkit-scrollbar {
+    width: 20px;
+    border-style:solid;
+	border-right-width : 0px;
+    border-top-width: 0px;
+    border-bottom-width : 0px; 
+    border-color : #620000;
+    
+}
 
-/* .vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-} */
+::-webkit-scrollbar-thumb {
+    background: #9f0000; 
+    border-color : white;
+    width: 80%;
+    
+}
 
-#ngrow2div {
+#agrow2div {
 	border-style : solid;
 	border-color: white;
 	margin : 1px;
+	margin-top : 50px;
+	height: 50%;
 }
 
-#footerdiv {
-	background-color : #620000;
+#usermgmt {
+	float : left;
+	border-style : solid;
+	border-color: white;
 }
 
-#ngrow2col6-1 {
-	/* background-color: violet; */
+#datamgmt {
+	float : left;
+	border-style : solid;
+	border-color: white;
+}
+
+#mybutton {
+    background-color: white;
+    border-style : solid;
+    border-color : #620000;
+    color: #620000;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    font-weight : Bold;
+}
+
+#mybutton:hover {
+    background-color: #620000;
+    color: white;
+}
+
+
+/* #agrow2col6-1 {
+	width: 20%;
+	background-color: violet;
 	border-color: white;
 	border-style: solid;
-	float : left;
-	flex: 2;
-}
-
-#ngrow2col6-2 {
-	/* background-color : green; */
-	border-color: #620000;
-	border-style: solid;
-	margin:1px;
-/* 	position : relative; */
-	float : left;
 	
 }
+
+#agrow2col6-2 {
+	width: 79%;
+	background-color : green;
+	border-color: white;
+	border-style: solid;
+	margin:1px;
+} */
+
+#agrow2col12 {
+	border-style : solid;
+	border-color : white;
+}
+
 
 
 #footerdiv {
@@ -133,46 +171,46 @@
 	color: white;
 }
 
-#sidenav {
-	/* background-color : grey; */
+/* #sidenav {
+	background-color : grey;
 	margin:1px
-}
+} */
 
-#grhead {
+/* #grhead {
 	background-color: #620000;
-	margin-top : 1px;
 	color: white;
 }
 
 #grng {
+	color: #620000; 
+	border-color: #620000;
+	border-style: solid;
+} */
+
+
+/* #sidenav a {
+	color : #620000;
+} */
+
+/* #grng:hover,#sidenav a:hover {
+	color:white;
+	text-decoration : none;
+	background-color : #9f0000;
+	
+}
+ */
+/* #grag {
 	color : white;
 	border-color: #620000;
 	border-style: solid;
 	border-top-width : 0px;
 	background-color : #9f0000;
 }
-
- #sidenav a {
-	color : #620000;
-}
-
-#grag:hover,#sidenav a:hover {
-	color:white;
-	text-decoration : none;
-	background-color : #9f0000;
-}
-
-#grag {
-	color: #620000; 
-	border-color: #620000;
-	border-style: solid;
-	border-top-width : 0px;
-}
+ */
 
 
-/* 
 
-#tablerow {
+/* #tablerow {
 	height : 50px;
 	border-style : solid;
 }
@@ -194,44 +232,15 @@
 }
 
 #tablemain {
+	display : block;
 	margin : 5px;
 	border-style : solid ;
+	border-color : #620000;
+	height : 400px;
+	overflow-y: scroll;
 }
-
-#gral:hover {
+ */
+/* #gral:hover {
 	background-color: #620000;
 	color:white;
 } */
-
-/* #formrowdiv1 {
-	border-style : solid;
-}
-
-#formrowdiv2 {
-	border-style : solid;
-}
-
-#formrowdiv3 {
-	border-style : solid;
-}
-
-#formrowdiv4 {
-	border-style : solid;
-}
- */
- 
-#formheading {
-	background-color: #620000;
-	color: white;
-}
-
-#formdiv {
-    width : 400px;
-    height: auto;
-    margin: 0 auto;
-    padding: 10px;
-    position: relative;
-}
-
-
-

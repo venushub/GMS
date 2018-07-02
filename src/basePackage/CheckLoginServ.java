@@ -31,7 +31,14 @@ public class CheckLoginServ extends HttpServlet {
         	HttpSession sesh = request.getSession();
         	sesh.setAttribute("username", usernamefin);
         	sesh.setAttribute("useremail", username);
-        	response.sendRedirect("home");
+        	String userrole = uid.getUserRole(username);
+        	if(userrole.equalsIgnoreCase(new String("customer"))){
+        		response.sendRedirect("home");
+        	} else if (userrole.equalsIgnoreCase(new String("admin"))) {
+        		response.sendRedirect("adminhome");
+        	} else {
+        		response.sendRedirect("agenthome");
+        	}
         	//request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
         }
         else {

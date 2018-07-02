@@ -37,7 +37,7 @@ public class UserId {
 		return maxID;
 	}
 	
-	public String registerNewUser(int uid, String name, String email,String pswd, Timestamp tmstmp){
+	public String registerNewUser(int uid, String name, String email,String pswd, String role, Timestamp tmstmp){
 		
 		try {
 	           Class.forName("org.postgresql.Driver");
@@ -47,13 +47,14 @@ public class UserId {
 		
 		try {
 			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
-			String query = "INSERT INTO Grievance.user_main(user_id,user_name,user_email,user_password,gr_time_stamp) VALUES(?,?,?,?,?)";
+			String query = "INSERT INTO Grievance.user_main(user_id,user_name,user_email,user_password,user_role,gr_time_stamp) VALUES(?,?,?,?,?,?)";
 			PreparedStatement stmt=con.prepareStatement(query);
 			stmt.setInt(1, uid);
 			stmt.setString(2, name);
 			stmt.setString(3, email);
 			stmt.setString(4, pswd);
-			stmt.setTimestamp(5, tmstmp);
+			stmt.setString(5, role);
+			stmt.setTimestamp(6, tmstmp);
 			stmt.executeUpdate();
 		    con.close();
 		    return "User registered Successfully";
@@ -87,6 +88,34 @@ public class UserId {
 		        System.out.println(e);
 			}
 		return dbusername;
+	}
+	
+	public String getUserRole(String useremail) {
+		
+		String userrole = new String();
+		
+		try {
+	           Class.forName("org.postgresql.Driver");
+	    } catch (ClassNotFoundException e) {
+	           System.out.println("Class not found " + e);
+	    }
+
+		try {
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
+			String query = "SELECT user_role FROM Grievance.user_main WHERE user_email=?";
+			PreparedStatement stmt=con.prepareStatement(query);	
+			stmt.setString(1, useremail);
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()){
+				userrole = rs.getString(1);
+			}
+		    con.close();
+			} catch (SQLException e) {
+		        System.out.println(e);
+			}
+		
+		return userrole;
+		
 	}
 	
 }

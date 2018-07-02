@@ -24,11 +24,12 @@ public class NewUserRegisterServ extends HttpServlet {
 		String name = request.getParameter("name");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String role = "customer";
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         LoginCheck lc = new LoginCheck();
         String lcr = lc.checkUserinDatabase(email);
         if(lcr == "FALSE"){
-        	uid.registerNewUser(user_id, name,email, password,timestamp);
+        	uid.registerNewUser(user_id, name,email, password,role,timestamp);
         	response.sendRedirect("login");
         	//request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
         }

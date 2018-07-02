@@ -1,4 +1,4 @@
-package basePackage;
+package loginPackage;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -18,15 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet("/home")
-public class HomepageServ extends HttpServlet {
+@WebServlet("/adminhome")
+public class AdminHomeServ extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession sesh = request.getSession(false);
-		
-		
-		
 /*		session.setAttribute("username", username);
 		session.setAttribute("useremail", useremail);*/
 		ArrayList<ArrayList> tableelems = new ArrayList<ArrayList>();
@@ -75,7 +72,7 @@ public class HomepageServ extends HttpServlet {
 		request.setAttribute("tableelems", tableelems);
 		
 		if(sesh.getAttribute("useremail") != null) {
-		request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/AdminHome.jsp").forward(request, response);
 		}	else {
 			response.sendRedirect("login");
 		}

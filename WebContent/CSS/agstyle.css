@@ -103,15 +103,15 @@
 }
 
 #agrow2col6-1 {
-	width: 20%;
+	width : 20%;
 	/* background-color: violet; */
 	border-color: white;
 	border-style: solid;
+	flex: 2;
 	
 }
 
 #agrow2col6-2 {
-	width: 79%;
 	/* background-color : green; */
 	border-color: white;
 	border-style: solid;
