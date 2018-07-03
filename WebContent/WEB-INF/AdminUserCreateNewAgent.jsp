@@ -30,53 +30,32 @@
 		<div class="row mt-2" ">
 			<div class="col-sm-12">
 				<svg width =65 height = 55>
-				<a href="adminhome">
+				<a href="adminusermgmt">
             		<polygon id="backarrow1" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#9f0000" stroke="#620000" stroke-width="2" />
         		</a>
         		</svg>
 			</div>
 		</div>
-		<div class="row text-center" id="agrow2div">
-			<div class="col-sm-6 d-flex flex-column align-items-center align-self-center" id="customercol6-1">
-				<div class="p-2"><h1 style="color: #9f0000"><b>Customer</b></h1></div>
-				<div class="p-2">
-					<svg width="150" height="150">
-			            <g>
-			                <circle cx="75" cy="75" r="70" stroke="#620000" stroke-width="4" fill="white" id="circ" />
-			                <text x="33" y="85" font-size="40px" fill="#620000" id="tex" style="font-weight : bold; font-family: Verdana, Geneva, Tahoma, sans-serif">Add</text>
-			            </g>
-	        		</svg>
-        		</div>
-				<div class="p-2">
-					<svg width="150" height="150">
-			            <g>
-			                <circle cx="75" cy="75" r="70" stroke="#620000" stroke-width="4" fill="white" id="circ1" />
-			                <text x="20" y="85" font-size="40px" fill="#620000" id="tex1" style="font-weight : bold; font-family: Verdana, Geneva, Tahoma, sans-serif">Alter</text>
-			            </g>
-	        		</svg>
-				</div>
+		<div class="row   align-self-center" id="agrow2div">
+		<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<form action="adminnewagentuserregister" method="post">
+						<div class="form-group">
+							<label for="name">Agent Good Name</label>
+					    	<input class="form-control" type="text" name="name" id="name">
+					    </div>
+						<div class="form-group">
+							<label for="username">Agent Email as Username</label>
+					    	<input class="form-control" type="email" name="email" id="email">
+					    </div>
+					    <div class="form-group">
+					    	<label for="password">Set Password:</label>
+					    	<input class="form-control" type="password" name="password" id="password">
+					    </div>
+					    <button type="submit" class="btn btn-primary" value="login" >Submit</button>
+					</form>
 			</div>
-			<div class="col-sm-6 d-flex flex-column align-items-center align-self-center" id="agentcol6-2" >
-				<div class="p-2" ><h1 style="color: #9f0000"><b>Agent</b></h1></div>
-				<div class="p-2">
-				<a href="adminaddagent">
-					<svg width="150" height="150">
-			            <g>
-			                <circle cx="75" cy="75" r="70" stroke="#620000" stroke-width="4" fill="white" id="circ2" />
-			                <text x="33" y="85" font-size="40px" fill="#620000" id="tex2" style="font-weight : bold; font-family: Verdana, Geneva, Tahoma, sans-serif">Add</text>
-			            </g>
-	        		</svg>
-	        	</a>
-				</div>
-				<div class="p-2">
-					<svg width="150" height="150">
-			            <g>
-			                <circle cx="75" cy="75" r="70" stroke="#620000" stroke-width="4" fill="white" id="circ3" />
-			                <text x="20" y="85" font-size="40px" fill="#620000" id="tex3" style="font-weight : bold; font-family: Verdana, Geneva, Tahoma, sans-serif">Alter</text>
-			            </g>
-	        		</svg>
-				</div>
-			</div>
+			<div class="col-sm-4"></div>
 		</div>
 		
 		<div class="row" id="footerdiv">
