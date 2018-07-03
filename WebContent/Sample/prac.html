@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Hello</title>
+    </head>
+    <body>
+        <svg width="100" height="100">
+            <g>
+                <circle cx="50" cy="50" r="40" stroke="#620000" stroke-width="4" fill="white" id="circ" />
+                <text x="20" y="50" font-size="20px" fill="#white" id="tex" style="font-weight : bold; font-family: Verdana, Geneva, Tahoma, sans-serif">Hello</text>
+            </g>
+        </svg>
+    </body>
+    <script>
+        document.getElementById("circ").addEventListener("mouseover", changeme );
+        document.getElementById("circ").addEventListener("mouseout", rechangeme );          
+
+        document.getElementById("tex").addEventListener("mouseover", changeme );
+        document.getElementById("tex").addEventListener("mouseout", rechangeme );  
+
+        function changeme(){
+            document.getElementById("circ").setAttribute("fill" , "#620000");
+            document.getElementById("tex").setAttribute("fill" , "white");
+        }
+    
+        function rechangeme(){
+            document.getElementById("circ").setAttribute("fill" , "white");
+            document.getElementById("tex").setAttribute("fill" , "#620000");
+        }
+    </script>
+</html>

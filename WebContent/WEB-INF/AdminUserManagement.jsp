@@ -27,11 +27,17 @@
 			<div class="col-sm-6 text-right" id="agrow1co6-1"><div id="welcome">Welcome ${username}</div></div>
 			<div class="col-sm-6 text-right align-middle" id="agrow1co6-2"><div id="logoutbuttondiv"><a href="logout"><button class="button" id="logoutbutton">Logout</button></a></div></div>			
 		</div>
-		<div class="row text-center d-flex " id="agrow2div">
-			<div id="customeruser" class="p-2">Customer User</div>
-			<div id="agentuser" class="p-2">Agent User</div>
-			<div id="agentuser" class="p-2">Agent User</div>
-			
+		<div class="row text-center" id="agrow2div">
+			<div class="col-sm-6 d-flex flex-column align-items-center align-self-center" id="customercol6-1">
+				<div class="p-2">Customer</div>
+				<div class="p-2">Create Customer</div>
+				<div class="p-2">Alter Customer</div>
+			</div>
+			<div class="col-sm-6 d-flex flex-column align-items-center align-self-center" id="agentcol6-2" >
+				<div class="p-2">Agent</div>
+				<div class="p-2">Create Agent</div>
+				<div class="p-2">Alter Agent</div>
+			</div>
 		</div>
 		
 		<div class="row" id="footerdiv">

@@ -97,13 +97,22 @@
 }
 
 #agrow2div {
-	
+	border-style : solid;
 	border-color: #620000;
-	height : 7%;
-	border
+	height : 80%;
 }
 
-#customeruser {
+#customercol6-1 {
+	border-color : #620000;
+	border-style : solid;
+}
+
+#agentcol6-2 {
+	border-color : #620000;
+	border-style : solid;
+}
+
+/* #customeruser {
 	width : 50%;
 	border-style : solid;
 	border-color: #620000;
@@ -116,9 +125,9 @@
 #customeruser:hover {
 	background-color : #9f0000;
 	color : white;
-}
+} */
 
-#agentuser {
+/* #agentuser {
 	width : 50%;
 	border-style : solid;
 	border-color: #620000;
@@ -131,7 +140,7 @@
 	background-color : #9f0000;
 	color : white;
 }
-
+ */
 
 #mybutton {
     background-color: white;
