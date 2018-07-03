@@ -1,3 +1,9 @@
+.form-control:focus {
+  border-color: #620000;
+/*   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+ */  box-shadow: inset 0 1px 1px rgba(98, 0, 0, 1), 0 0 8px rgba(98, 0, 0, 1);
+}
+
 /* #ngbscontainer {
 	background-color : white;
 	border-color: white;
@@ -94,6 +100,7 @@
 #ngrow2div {
 	border-style : solid;
 	border-color: white;
+	margin : 1px;
 }
 
 #footerdiv {
@@ -104,7 +111,8 @@
 	/* background-color: violet; */
 	border-color: white;
 	border-style: solid;
-	width: 30%;
+	float : left;
+	flex: 2;
 }
 
 #ngrow2col6-2 {
@@ -113,7 +121,8 @@
 	border-style: solid;
 	margin:1px;
 /* 	position : relative; */
-	width : 60%;
+	float : left;
+	
 }
 
 
@@ -237,8 +246,3 @@
 	box-shadow: none;
 }
 
-.form-control:focus {
-  border-color: #620000;
-/*   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
- */  box-shadow: inset 0 1px 1px rgba(98, 0, 0, 1), 0 0 8px rgba(98, 0, 0, 1);
-}

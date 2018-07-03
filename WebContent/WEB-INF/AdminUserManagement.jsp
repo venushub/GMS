@@ -31,7 +31,7 @@
 			<div class="col-sm-12">
 				<svg width =65 height = 55>
 				<a href="adminhome">
-            		<polygon id="backarrow1" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#9f0000" stroke="#620000" stroke-width="2" />
+            		<polygon id="backarrow" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#620000" stroke="#620000" stroke-width="2" />
         		</a>
         		</svg>
 			</div>

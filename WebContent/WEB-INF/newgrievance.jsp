@@ -44,52 +44,19 @@
 				<!-- <div id="formheading"><h3>Please Fill in Grievance details</h3></div> -->
 				<div id="formdiv">
 					<form action="createnewgrievance" method="post">
-						<!-- <div id="formrowdiv1" style="float:left">
-							<div id="intendedtodiv" class="form-group" style="float:left">
-								<label for="intendedto">Intended to:</label>
-						    	<select name="intendedto" id="intendedto" class="form-control">
-									<option value="CCA">CCA</option>
-									<option value="DoT">DoT</option>
-								</select>
-							</div>
-							<div id="typediv" class="form-group" style="float:left">
-					    	<label for="type">Type:</label>
-					    	<select name="type" id="type" class="form-control">
-								<option value="For Action">For Action</option>
-								<option value="For Information">For Information</option>
+						<div id="categorydiv" class="form-group">
+					    	<label for="category">Category:</label>
+					    	<select name="category" id="category" class="form-control">
+								<option value="SUC">SUC</option>
+								<option value="LF">LF</option>
 							</select>
-							</div>
-					    </div> -->
-					    <div id="formrowdiv2" style="float:left; clear:left">
-							<div id="categorydiv" class="form-group" style="float:left">
-						    	<label for="category">Category:</label>
-						    	<select name="category" id="category" class="form-control">
-									<option value="SUC">SUC</option>
-									<option value="LF">LF</option>
-								</select>
-							</div>
-							<!-- <div id="yeardiv" class="form-group" style="float:left">
-						    	<label for="year">Year:</label>
-						    	<select name="year" id="year" class="form-control">
-									<option value="2012">2012</option>
-									<option value="2013">2013</option>
-									<option value="2014">2014</option>
-									<option value="2015">2015</option>
-								</select>
-							</div> -->
-					    </div>
-					    <div id="formrowdiv3" style="float:left; clear:left">
-							<div id="grievancenotediv" class="form-group" style="float:left">
-						    	<label for="grievancenote">Grievance Note:</label>
-						    	<textarea name="grievancenote" rows="10" cols="30" id="grievancenote" class="form-control">
-								</textarea>
-							</div>
-					    </div>
-					    <div id="formrowdiv4" style="float:left; clear:left">
-							<div id="submitbuttondiv" class="form-group" style="float:left">
-					    	<button type="submit" class="btn btn-primary" value="login" id="submitbutton" >Submit</button>
-					    	</div>
-					    </div>
+						</div>	
+						<div id="grievancenotediv" class="form-group">
+					    	<label for="grievancenote">Grievance Note:</label>
+					    	<textarea name="grievancenote" rows="10" cols="30" id="grievancenote" class="form-control">
+							</textarea>
+						</div>
+					    <button type="submit" class="btn btn-primary" value="login" id="submitbutton">Submit</button>
 					</form>
 				</div>
 			</div>
@@ -99,5 +66,5 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="./JS/ngscript.js"></script>
+<script type="text/javascript" src="./JS/ngscript.js"></script>	
 </html>
