@@ -23,7 +23,6 @@ public class HomepageServ extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession sesh = request.getSession(false);
 		
 		
 		
@@ -74,10 +73,12 @@ public class HomepageServ extends HttpServlet {
       
 		request.setAttribute("tableelems", tableelems);
 		
-		if(sesh.getAttribute("useremail") != null) {
-		request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
-		}	else {
+		HttpSession sesh = request.getSession(false);
+		if( sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("customer")){
+			request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
+		} else {
 			response.sendRedirect("login");
 		}
+		
 	}
 }

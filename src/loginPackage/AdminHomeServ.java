@@ -23,7 +23,6 @@ public class AdminHomeServ extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession sesh = request.getSession(false);
 /*		session.setAttribute("username", username);
 		session.setAttribute("useremail", useremail);*/
 		ArrayList<ArrayList> tableelems = new ArrayList<ArrayList>();
@@ -71,10 +70,15 @@ public class AdminHomeServ extends HttpServlet {
       
 		request.setAttribute("tableelems", tableelems);
 		
-		if(sesh.getAttribute("useremail") != null) {
-		request.getRequestDispatcher("/WEB-INF/AdminHome.jsp").forward(request, response);
-		}	else {
+		
+		HttpSession sesh = request.getSession(false);
+		if( sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("admin")){
+			request.getRequestDispatcher("/WEB-INF/AdminHome.jsp").forward(request, response);
+		} else {
 			response.sendRedirect("login");
 		}
+		
+
+		
 	}
 }

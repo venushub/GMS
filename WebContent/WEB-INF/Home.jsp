@@ -35,14 +35,14 @@
 		</div>
 		<div class="row" id="emptyrow"></div>
 		<div class="row" id="agrow2div">
-			<div class="col-sm-6 text-center align-center" id="agrow2col6-1">
+			<div class="col-sm-3 text-center align-center" id="agrow2col6-1">
 				<div id="sidenav">
 					<div id="grhead">Grievances</div>
 					<a href="newgrievance"><div id="grng">New Grievance</div></a>
 					<div id="grag">All Grievances</div>
 				</div>
 			</div>
-			<div class="col-sm-6 text-center" id="agrow2col6-2">
+			<div class="col-sm-9 text-center" id="agrow2col6-2">
 			<table id="tablemain" class="table-responsive-sm">
 			<tr id="tableheaderrow">
 				<th id="tableheadercolumn">One</th>

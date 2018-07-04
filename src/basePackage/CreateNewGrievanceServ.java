@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import newPackage.GrievanceId;;
 
@@ -63,7 +64,13 @@ public class CreateNewGrievanceServ extends HttpServlet {
 		session.setAttribute("username", "venu");*/
 		/*request.setAttribute("username", "venu");
 		request.setAttribute("userid", "1234");*/
-    	response.sendRedirect("home");
+		
+		HttpSession sesh = request.getSession(false);
+		if(  sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("customer")){
+			response.sendRedirect("home");
+		} else {
+			response.sendRedirect("login");
+		}
 /*		request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
 */	}
 }

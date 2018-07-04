@@ -37,14 +37,23 @@ public class AdminNewAgentCreateUser extends HttpServlet {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         LoginCheck lc = new LoginCheck();
         String lcr = lc.checkUserinDatabase(email);
-        if(lcr == "FALSE"){
-        	uid.registerNewUser(user_id, name,email, password,role,timestamp);
-        	response.sendRedirect("login");
-        	//request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
-        }
-        else {
-            request.setAttribute("error", "email already exists in our database");
-        	request.getRequestDispatcher("/WEB-INF/AdminUserCreateNewAgent.jsp").forward(request, response);
-        }
+        
+        
+        HttpSession sesh = request.getSession(false);
+		if( sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("admin")){
+
+	        if(lcr == "FALSE"){
+	        	uid.registerNewUser(user_id, name,email, password,role,timestamp);
+	        	response.sendRedirect("login");
+	        	//request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
+	        }
+	        else {
+	            request.setAttribute("error", "email already exists in our database");
+	        	request.getRequestDispatcher("/WEB-INF/AdminUserCreateNewAgent.jsp").forward(request, response);
+	        }
+	        
+		} else {
+			response.sendRedirect("login");
+		}
 	}
 }

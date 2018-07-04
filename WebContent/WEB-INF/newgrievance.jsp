@@ -33,26 +33,27 @@
 		</div>
 		<div class="row" id="emptyrow"></div>
 		<div class="row" id="ngrow2div">
-			<div class="col-sm-6 text-center" id="ngrow2col6-1">
+			<div class="col-sm-3 text-center" id="ngrow2col6-1">
 				<div id="sidenav">
 					<div id="grhead">Grievances</div>
 					<div id="grng">New Grievance</div>
 					<a href="home"><div id="grag">All Grievances</div></a>
 				</div>
 			</div>
-			<div class="col-sm-6 text-center" id="ngrow2col6-2">
+			<div class="col-sm-1"></div>
+			<div class=" col-sm-6 " id="ngrow2col6-2">
 				<!-- <div id="formheading"><h3>Please Fill in Grievance details</h3></div> -->
 				<div id="formdiv">
 					<form action="createnewgrievance" method="post">
 						<div id="categorydiv" class="form-group">
-					    	<label for="category">Category:</label>
+					    	<label for="category" style="font-weight:bold; color : #620000">Category:</label>
 					    	<select name="category" id="category" class="form-control">
 								<option value="SUC">SUC</option>
 								<option value="LF">LF</option>
 							</select>
 						</div>	
 						<div id="grievancenotediv" class="form-group">
-					    	<label for="grievancenote">Grievance Note:</label>
+					    	<label for="grievancenote" style="font-weight:bold; color : #620000">Grievance Note:</label>
 					    	<textarea name="grievancenote" rows="10" cols="30" id="grievancenote" class="form-control">
 							</textarea>
 						</div>

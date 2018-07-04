@@ -28,10 +28,11 @@ public class CheckLoginServ extends HttpServlet {
         if(lcr == "TRUE"){
         	
         	String usernamefin = uid.getUserNameForSession(username);
+        	String userrole = uid.getUserRole(username);
         	HttpSession sesh = request.getSession();
         	sesh.setAttribute("username", usernamefin);
         	sesh.setAttribute("useremail", username);
-        	String userrole = uid.getUserRole(username);
+        	sesh.setAttribute("userrole", userrole);
         	if(userrole.equalsIgnoreCase(new String("customer"))){
         		response.sendRedirect("home");
         	} else if (userrole.equalsIgnoreCase(new String("admin"))) {

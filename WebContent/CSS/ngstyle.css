@@ -104,16 +104,14 @@
 	/* background-color: violet; */
 	border-color: white;
 	border-style: solid;
-	width: 30%;
 }
 
 #ngrow2col6-2 {
 	/* background-color : green; */
-	border-color: #620000;
+	border-color: white;
 	border-style: solid;
 	margin:1px;
 /* 	position : relative; */
-	width : 60%;
 }
 
 
@@ -223,11 +221,16 @@
 }
 
 #formdiv {
-    width : 400px;
+    /* width : 400px;
     height: auto;
     margin: 0 auto;
     padding: 10px;
-    position: relative;
+    position: relative; */
+    border-style : solid;
+    border-color : white;
+    border-bottom-width : 20px;
+    border-top-width : 20px;
+    
 }
 
 #submitbutton {

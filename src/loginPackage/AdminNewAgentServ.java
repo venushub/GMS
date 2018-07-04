@@ -23,7 +23,6 @@ public class AdminNewAgentServ extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession sesh = request.getSession(false);
 /*		session.setAttribute("username", username);
 		session.setAttribute("useremail", useremail);*/
        /* for(int i=1;i<10;i++){
@@ -35,9 +34,10 @@ public class AdminNewAgentServ extends HttpServlet {
 		tableelems.add(row);
 		}*/
 		
-		if(sesh.getAttribute("useremail") != null) {
-		request.getRequestDispatcher("/WEB-INF/AdminUserCreateNewAgent.jsp").forward(request, response);
-		}	else {
+		HttpSession sesh = request.getSession(false);
+		if( sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("admin")){
+			request.getRequestDispatcher("/WEB-INF/AdminUserCreateNewAgent.jsp").forward(request, response);
+		} else {
 			response.sendRedirect("login");
 		}
 	}

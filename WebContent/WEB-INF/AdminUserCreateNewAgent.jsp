@@ -31,7 +31,7 @@
 			<div class="col-sm-12">
 				<svg width =65 height = 55>
 				<a href="adminusermgmt">
-            		<polygon id="backarrow1" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#9f0000" stroke="#620000" stroke-width="2" />
+            		<polygon id="backarrow" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#620000" stroke="#620000" stroke-width="2" />
         		</a>
         		</svg>
 			</div>
@@ -41,18 +41,18 @@
 			<div class="col-sm-4">
 				<form action="adminnewagentuserregister" method="post">
 						<div class="form-group">
-							<label for="name">Agent Good Name</label>
+							<label for="name" style="font-weight:bold; color : #620000">Agent Good Name</label>
 					    	<input class="form-control" type="text" name="name" id="name">
 					    </div>
 						<div class="form-group">
-							<label for="username">Agent Email as Username</label>
+							<label for="username" style="font-weight:bold; color : #620000">Agent Email as Username</label>
 					    	<input class="form-control" type="email" name="email" id="email">
 					    </div>
 					    <div class="form-group">
-					    	<label for="password">Set Password:</label>
+					    	<label for="password" style="font-weight:bold; color : #620000">Set Password:</label>
 					    	<input class="form-control" type="password" name="password" id="password">
 					    </div>
-					    <button type="submit" class="btn btn-primary" value="login" >Submit</button>
+					    <button type="submit" class="btn btn-primary" id="submitbutton" value="login" >Submit</button>
 					</form>
 			</div>
 			<div class="col-sm-4"></div>
@@ -63,5 +63,29 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="./JS/adminusermanagement.js"></script>
+<script>
+
+	document.getElementById("backarrow").addEventListener("mouseover", changeme4);
+	document.getElementById("backarrow").addEventListener("mouseout", rechangeme4 );
+	
+	function changeme4(){
+	    document.getElementById("backarrow").setAttribute("fill" , "#9f0000");
+	}
+	
+	function rechangeme4(){
+	    document.getElementById("backarrow").setAttribute("fill" , "#620000");
+	}
+	
+	 document.getElementById("submitbutton").addEventListener("mouseover", changeme);
+	 document.getElementById("submitbutton").addEventListener("mouseout", rechangeme);
+
+	 function changeme(){
+		 document.getElementById("submitbutton").style.backgroundColor = "#9f0000";
+	 }
+	 
+	 function rechangeme(){
+		 document.getElementById("submitbutton").style.backgroundColor = "#620000";
+	 }
+	 
+</script>
 </html>
