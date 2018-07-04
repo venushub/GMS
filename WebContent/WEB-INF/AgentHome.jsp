@@ -52,15 +52,16 @@
 				<th id="tableheadercolumn">Category</th>
 				<th id="tableheadercolumn">Message</th>
 				<th id="tableheadercolumn">Date</th>
+				<th id="tableheadercolumn">Status</th>
 			</tr>
 			</thead>
 			<tbody>
-			<c:forEach var="i" begin="0" end="${tableelems.size()-1}">
+			<c:forEach var="i" begin="1" end="${tableelems.size()}">
 				<tr id="tablerow" onmouseover="func1(this)" onmouseout="func2(this)">
-					<td id="tablecolumn"> ${i+1} </td>
-					<c:forEach var="j" begin="1" end="${tableelems[i].size()-1}">
+					 <td id="tablecolumn" class="tablehyper"><a href="agentgrievancedetail/?gr_id=${tableelems[i-1][0]}" id="tablelink"><b>${i}</b></a></td>
+					<c:forEach var="j" begin="1" end="${tableelems[i-1].size()-1}">
 						<td id="tablecolumn">
-							${tableelems[i][j]}
+							${tableelems[i-1][j]}
 						</td>
 					</c:forEach>
 				</tr>

@@ -46,7 +46,7 @@ public class AgentHomeServ extends HttpServlet {
 	/*	int i = 1;*/
 		Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
 		Statement stmt=con.createStatement();
-		ResultSet rs = stmt.executeQuery("select gr_id, user_email, gr_type, gr_msg, gr_time_stamp from Grievance.grievance_main");
+		ResultSet rs = stmt.executeQuery("select gr_id, user_email, gr_type, gr_msg, gr_time_stamp, agent_status from Grievance.grievance_main");
 		while(rs.next()){
 
 			ArrayList<String> row = new ArrayList<String>();
@@ -55,14 +55,13 @@ public class AgentHomeServ extends HttpServlet {
 			row.add(rs.getString("user_email"));
 			row.add(rs.getString("gr_type"));
 			row.add(rs.getString("gr_msg"));
-			
 			LocalDate localDate = rs.getObject("gr_time_stamp",LocalDate.class);//For reference
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
 			String formattedString = localDate.format(formatter);
 			
 			row.add(formattedString);
 		/*	i++;*/
-			
+			row.add(rs.getString("agent_status"));
 			tableelems.add(row);
 			
 		}

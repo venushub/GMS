@@ -7,11 +7,14 @@ gral.style.color = "white";
 function func1(grng) {
 	grng.style.backgroundColor = "#9f0000";
 	grng.style.color = "white";
+	document.getElementById("tablelink").style.color = "white";
 }
 
 function func2(grng) {
 	grng.style.backgroundColor = "white";
 	grng.style.color = "#620000";
+	document.getElementById("tablelink").style.color = "#620000";
+
 }
 
 
@@ -19,7 +22,7 @@ function func2(grng) {
 /*document.getElementById("agbscontainer").style.height = 95 + "vh";*/
 
 
-console.log(screen.height);
+
 
 /*function bordersolid(grng) {	
 	grng.style.borderStyle = "solid";

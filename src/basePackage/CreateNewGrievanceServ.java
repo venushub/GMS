@@ -48,13 +48,15 @@ public class CreateNewGrievanceServ extends HttpServlet {
 		Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
 		/*String query = "INSERT INTO Grievance.grievance_main(gr_id,user_id,gr_type,gr_msg,gr_time_stamp) VALUES("+ gr_id + "," + userid + "," +"'"+ category+"'"+"," +"'"+ grievancenote +"'"+","+"'"+ localDate+"'"+")";
 		*/
-		String query = "INSERT INTO Grievance.grievance_main(gr_id,user_email,gr_type,gr_msg,gr_time_stamp) VALUES(?,?,?,?,?)";
+		String query = "INSERT INTO Grievance.grievance_main(gr_id,user_email,gr_type,gr_msg,gr_time_stamp,agent_status,user_status) VALUES(?,?,?,?,?,?,?)";
 		PreparedStatement prstmt = con.prepareStatement(query);
 		prstmt.setInt(1, gr_id);
 		prstmt.setString(2, useremail);
 		prstmt.setString(3, category);
 		prstmt.setString(4, grievancenote);
 		prstmt.setTimestamp(5, timestamp);
+		prstmt.setString(6, "open");
+		prstmt.setString(7, "open");
 		prstmt.executeUpdate();
 	    con.close();
 		} catch (SQLException e) {
