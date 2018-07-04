@@ -24,11 +24,11 @@ public class CreateNewGrievanceServ extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		HttpSession sesh = request.getSession(false);
 		GrievanceId gid = new GrievanceId();
 		int gr_id = gid.getGrievanceId();
 		gr_id = gr_id + 1;
-		int userid = 3101;
+		String useremail = sesh.getAttribute("useremail").toString();
 		String category = request.getParameter("category");
 		String grievancenote = request.getParameter("grievancenote");
 		
@@ -48,10 +48,10 @@ public class CreateNewGrievanceServ extends HttpServlet {
 		Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
 		/*String query = "INSERT INTO Grievance.grievance_main(gr_id,user_id,gr_type,gr_msg,gr_time_stamp) VALUES("+ gr_id + "," + userid + "," +"'"+ category+"'"+"," +"'"+ grievancenote +"'"+","+"'"+ localDate+"'"+")";
 		*/
-		String query = "INSERT INTO Grievance.grievance_main(gr_id,user_id,gr_type,gr_msg,gr_time_stamp) VALUES(?,?,?,?,?)";
+		String query = "INSERT INTO Grievance.grievance_main(gr_id,user_email,gr_type,gr_msg,gr_time_stamp) VALUES(?,?,?,?,?)";
 		PreparedStatement prstmt = con.prepareStatement(query);
 		prstmt.setInt(1, gr_id);
-		prstmt.setInt(2, userid);
+		prstmt.setString(2, useremail);
 		prstmt.setString(3, category);
 		prstmt.setString(4, grievancenote);
 		prstmt.setTimestamp(5, timestamp);
@@ -65,7 +65,6 @@ public class CreateNewGrievanceServ extends HttpServlet {
 		/*request.setAttribute("username", "venu");
 		request.setAttribute("userid", "1234");*/
 		
-		HttpSession sesh = request.getSession(false);
 		if(  sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("customer")){
 			response.sendRedirect("home");
 		} else {

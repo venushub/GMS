@@ -29,6 +29,7 @@
 	<div class="container" id="ngbscontainer">
 		<div class="row" id="ngrow1div">
 			<div class="col-sm-6 text-right" id="agrow1co6-1"><div id="welcome">Welcome ${username}</div></div>
+			<div class="col-sm-6 text-right align-middle" id="agrow1co6-2"><div id="logoutbuttondiv"><a href="index"><button class="button" id="logoutbutton">Home</button></a></div></div>	
 		</div>
 		<div class="row" id="emptyrow"></div>
 		<div class="row" id="emptyrow"></div>
@@ -37,7 +38,11 @@
 		<div class="row"><div class="col-sm-12 text-center" style="height:80px"><h2 style="color :#9f0000">Please enter your Registration credentials</h2></div></div>
 		<div class="row" id="emptyrow"></div>
 					<div class="row">
-				<div class="col-sm-4"></div>
+				<div class="col-sm-4" >
+					<!-- <svg width="100" height="100">
+            			<polygon points="20,100 20,60 0,60 50,25 100,60 80,60 80,100 60,100 60,75 40,75 40,100" style="fill:#620000;stroke: #620000 ;stroke-width:1" />
+        			</svg> -->
+				</div>
 				<div class="col-sm-4">
 					<form action="newuserregister" method="post">
 						<div class="form-group">

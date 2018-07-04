@@ -93,7 +93,6 @@
     background: #9f0000; 
     border-color : white;
     width: 80%;
-    
 }
 
 #agrow2div {
@@ -112,9 +111,11 @@
 
 #agrow2col6-2 {
 	/* background-color : green; */
-	border-color: white;
+	border-color: #620000;
 	border-style: solid;
 	margin:1px;
+	padding : 0px;
+
 }
 
 
@@ -167,12 +168,26 @@
 	background-color : #9f0000;
 }
 
+/* #tablerow {
+	height : 50px;
+	border-style : solid;
+}
+ */
+
+#tableheaderrow {
+	color : white;
+	background-color : #620000;	
+}
 
 
 
+#tablecolumn {
+	width : 20% ;
+}
+/* 
 #tablerow {
 	height : 50px;
-	/* border-style : solid; */
+	border-style : solid;
 }
 
 #tablecolumn {
@@ -188,18 +203,32 @@
 	background-color : #620000;
 	color : white;
 	height: 50px;
-	/* border-style : solid; */
-}
+	border-style : solid;
+} */
 
-#tablemain {
-	display : block;
-	/* margin : 5px; */
+/* #tablemain {
+	margin : 5px;
 	border-style : solid ;
 	border-color : #620000;
 	height : 400px;
 	overflow-y: scroll;
-}
+}  */
 
+/* .tablemain {
+	 border: 1px solid black;
+	 border-collapse: collapse;
+	 overflow-y : scroll;
+} */
+/* 
+.tablemain td {
+  border: 1px solid black;
+}*/
+
+
+#tablediv {
+	height : 400px;
+	margin : 0px;
+} 
 /* #gral:hover {
 	background-color: #620000;
 	color:white;

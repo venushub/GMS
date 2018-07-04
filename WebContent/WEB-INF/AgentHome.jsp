@@ -38,16 +38,17 @@
 			<div class="col-sm-3 text-center align-center" id="agrow2col6-1">
 				<div id="sidenav">
 					<div id="grhead">Grievances</div>
-					<a href="newgrievance"><div id="grng">New Grievance</div></a>
+					<a href="newagentgrievance"><div id="grng">New Grievance</div></a>
 					<div id="grag">All Grievances</div>
 				</div>
 			</div>
-						<div class="col-sm-8 text-center" id="agrow2col6-2">
+			<div class="col-sm-8 text-center" id="agrow2col6-2">
 			<div id="tablediv" class="table table-responsive">
 			<table class="tablemain">
 			<thead>
 			<tr id="tableheaderrow">
 				<th id="tableheadercolumn">#</th>
+				<th id="tableheadercolumn">user</th>
 				<th id="tableheadercolumn">Category</th>
 				<th id="tableheadercolumn">Message</th>
 				<th id="tableheadercolumn">Date</th>

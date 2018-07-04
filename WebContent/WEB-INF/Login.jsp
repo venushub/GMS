@@ -29,6 +29,7 @@
 	<div class="container" id="ngbscontainer">
 		<div class="row" id="ngrow1div">
 			<div class="col-sm-6 text-right" id="agrow1co6-1"><div id="welcome">Welcome ${username}</div></div>
+			<div class="col-sm-6 text-right align-middle" id="agrow1co6-2"><div id="logoutbuttondiv"><a href="index"><button class="button" id="logoutbutton">Home</button></a></div></div>	
 		</div>
 		<div class="row" id="emptyrow"></div>
 		<div class="row" id="emptyrow"></div>

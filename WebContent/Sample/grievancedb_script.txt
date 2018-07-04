@@ -1,0 +1,9 @@
+CREATE TABLE grievance.grievance_main
+(
+  gr_id integer NOT NULL,
+  user_email character varying(50) NOT NULL,
+  gr_type character(5),
+  gr_msg character varying(150),
+  gr_time_stamp timestamp without time zone,
+  CONSTRAINT grievance_main_pkey PRIMARY KEY (gr_id)
+)
