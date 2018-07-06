@@ -25,5 +25,9 @@ public class AgentGrievanceDetailServ extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	System.out.println(request.getParameter("gr_id"));
+	
+	request.getRequestDispatcher("/WEB-INF/AgentGrievanceDetail.jsp").forward(request, response);
+
+	
 	}
 }

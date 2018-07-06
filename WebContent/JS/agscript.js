@@ -14,7 +14,6 @@ function func2(grng) {
 	grng.style.backgroundColor = "white";
 	grng.style.color = "#620000";
 	document.getElementById("tablelink").style.color = "#620000";
-
 }
 
 

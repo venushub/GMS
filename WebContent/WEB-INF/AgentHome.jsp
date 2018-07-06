@@ -58,12 +58,13 @@
 			<tbody>
 			<c:forEach var="i" begin="1" end="${tableelems.size()}">
 				<tr id="tablerow" onmouseover="func1(this)" onmouseout="func2(this)">
-					 <td id="tablecolumn" class="tablehyper"><a href="agentgrievancedetail/?gr_id=${tableelems[i-1][0]}" id="tablelink"><b>${i}</b></a></td>
-					<c:forEach var="j" begin="1" end="${tableelems[i-1].size()-1}">
+					 <td id="tablecolumn" class="tablehyper"><b>${i}</b></td>
+					<c:forEach var="j" begin="1" end="${tableelems[i-1].size()-2}">
 						<td id="tablecolumn">
 							${tableelems[i-1][j]}
 						</td>
 					</c:forEach>
+					<td id="tablecolumn" class="tablehyper"><a href="agentgrievancedetail/?gr_id=${tableelems[i-1][0]}" id="tablelink"><b>${tableelems[i-1][5]}</b></a></td>
 				</tr>
 			</c:forEach>
 			</tbody>
