@@ -64,10 +64,10 @@
 							${tableelems[i-1][j]}
 						</td>
 					</c:forEach>
-					<td id="tablecolumn" class="tablehyper"><a href="agentgrievancedetail/?gr_id=${tableelems[i-1][0]}" id="tablelink"><b>${tableelems[i-1][5]}</b></a></td>
+				<td id="tablecolumn" class="tablehyper"><a href="agentgrievancedetail?gr_id=<c:out value="${tableelems[i-1][0]}"/>" id="tablelink"><b>${tableelems[i-1][5]}</b></a></td>
 				</tr>
 			</c:forEach>
-			</tbody>
+			</tbody>	
 			</table>
 			</div>
 			</div>

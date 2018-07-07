@@ -48,7 +48,6 @@ public class AgentHomeServ extends HttpServlet {
 		Statement stmt=con.createStatement();
 		ResultSet rs = stmt.executeQuery("select gr_id, user_email, gr_type, gr_msg, gr_time_stamp, agent_status from Grievance.grievance_main");
 		while(rs.next()){
-
 			ArrayList<String> row = new ArrayList<String>();
 	/*		row.add(Integer.toString(i));*/
 			row.add(rs.getString("gr_id"));

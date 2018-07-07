@@ -253,3 +253,33 @@
 	background-color: #620000;
 	color:white;
 } */
+
+
+#detailrow {
+	
+	height : 70%;
+	border-style : solid;
+	border-color : white;
+	
+}
+
+#sidedetails {
+	
+	border-style : solid;
+	border-color : white;
+	margin : 10px;
+	width : 30%;
+	word-wrap: break-word;
+	
+}
+
+#sidedetails h3 {
+	color : #620000;
+}
+
+#commentscol {
+	
+	border-style : solid;
+	border-color : #620000;
+	margin : 10px;
+}

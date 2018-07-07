@@ -16,7 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import newPackage.GrievanceId;;
+import newPackage.GrievanceId;
+import newPackage.CommentsId;
 
 @WebServlet("/createnewgrievance")
 public class CreateNewGrievanceServ extends HttpServlet {
@@ -31,6 +32,10 @@ public class CreateNewGrievanceServ extends HttpServlet {
 		String useremail = sesh.getAttribute("useremail").toString();
 		String category = request.getParameter("category");
 		String grievancenote = request.getParameter("grievancenote");
+		
+		CommentsId cid = new CommentsId();
+		int com_id = cid.getCommentId();
+		com_id = com_id + 1;
 		
 	/*	LocalDate localDate = LocalDate.now();*/
 		/*System.out.println(category);
@@ -58,6 +63,17 @@ public class CreateNewGrievanceServ extends HttpServlet {
 		prstmt.setString(6, "open");
 		prstmt.setString(7, "open");
 		prstmt.executeUpdate();
+		
+		
+		String query1 = "INSERT INTO Grievance.grievance_comments(comment_id,gr_id,user_email,comment_msg,comment_time_stamp) VALUES(?,?,?,?,?)";
+		PreparedStatement prstmt1 = con.prepareStatement(query1);
+		prstmt1.setInt(1, com_id);
+		prstmt1.setInt(2, gr_id);
+		prstmt1.setString(3, useremail);
+		prstmt1.setString(4, grievancenote);
+		prstmt1.setTimestamp(5, timestamp);
+		prstmt1.executeUpdate();
+
 	    con.close();
 		} catch (SQLException e) {
 	        System.out.println(e);
