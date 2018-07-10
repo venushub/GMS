@@ -285,7 +285,7 @@
 	border-style : solid;
 	border-color : #620000;
 	margin-left : 6.5%;
-	height : 100%;
+	height : 98.8%;
 	padding : 0px;
 	
 }
@@ -313,7 +313,7 @@
 } */
 
 
-.table tr {
+/* .table tr {
 	
 }
 
@@ -321,7 +321,17 @@
 	width : 10%;
 	padding : 0px;
 	border : 0px;
+} */
+
+
+
+#commentstable td {
+	
+	width : 10%;
+	padding : 0px;
+	border : 0px;
 }
+
 
 #sendcomment {
 	
@@ -330,8 +340,8 @@
 	border-right-width : 0px;
 	border-bottom-width : 0px;
 	border-color : #620000;
-	height : 80%;
-	
+	height : 60%;
+	display  : none;
 }
 
 /* 
@@ -343,3 +353,49 @@
 }
 
  */
+ 
+ 
+ /* 
+ #hideshow {
+ 
+ display : none;
+ } */
+ 
+ #entermessage2 {
+ 
+ 	border-style : solid;
+	border-left-width : 0px;
+	border-right-width : 0px;
+	border-bottom-width : 0px;
+	border-color : #620000;
+	height : 9%;
+ 
+ }
+ 
+ 
+ #commentformdiv {
+ 
+ 	height : 70%;
+ 	width : 80%;
+	border-style : solid;
+	border-color : white;
+	margin : 10%;
+	
+ 
+ }
+ 
+ 
+ .form-control:focus {
+  border-color: #620000;
+/*   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+ */  box-shadow: inset 0 1px 1px rgba(98, 0, 0, 1), 0 0 8px rgba(98, 0, 0, 1);
+}
+
+
+#submitbutton {
+	background-color : #620000;
+	font-weight : bold;
+	border-color : #620000;
+	box-shadow: none;
+}
+

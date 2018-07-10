@@ -34,23 +34,23 @@
         		</svg>
 				</div>
 				<div style="height:100px" id="khalidiv"></div>
-				<div ><b>Customer Username</b></div>
+				<div style="color : #e2b616"><b>Customer Username</b></div>
 				<div ><h3>${useremail}</h3></div>
 				
-				<div ><b>Grievance Type</b></div>
+				<div style="color : #e2b616"><b>Grievance Type</b></div>
 				<div><h3>${grtype}</h3></div>
 				
-				<div ><b>Created on</b></div>
+				<div style="color : #e2b616"><b>Created on</b></div>
 				<div><h3>${timestamp}</h3></div>
 				
-				<div ><b>Status</b></div>
+				<div style="color : #e2b616"><b>Status</b></div>
 				<div><h3>${agentstatus}</h3></div>
 			</div>
 		<div class="col-sm-7 d-flex text-center flex-column" id="commentscol">
 		<div style="margin:0px ;background-color : #620000 ; color : white">
 			<h3>Comments</h3>
 		</div>
-		<div  class="table table-responsive" style="height : 100%  ;margin : 0px; ">
+		<div  class="table table-responsive" style="height : 100%  ;margin : 0px; " id="commentstable">
 		<table>
 		<thead></thead>
 		<tbody>
@@ -70,23 +70,47 @@
 		</table>
 		</div>
 	    <div id="sendcomment"> 
+	    <!-- <div style="border-color : #620000 ; border-style:solid; margin: 0px; padding : 0px;"> -->
+<!-- 		<div style="background-color : white; padding:0px; color : #620000 ; font-size : 20px;border-color : #620000 ; border-style:solid; float:left"><b>Make Comment</b></div>
+ -->		<div style="border-color : white ; border-style:solid;float:right">
+		<svg height="28px" width="30px" style="background-color: white" id="hidecommentdiv">
 		
+			<polygon id="commentclick" points="6,6 26,6 15,20" fill="#e2b616" stroke="#e2b616" stroke-width="1" />
+			
 		
-		
-		hello
-			<!-- 	<form>
-				<div>
-					<label for="emtermessage"></label>
-					<input type="text" name="comment" id="enter Message">
-				</div>
-				<div>
-					<button type="submit" class="btn btn-primary" value="login" id="submitbutton">Submit</button>
-				</div>
-				</form> -->
+		</svg>
+<!-- 		<button id="hidebutton">hide</button>
+ -->		</div>
+		<!-- </div> -->
+		<div id="commentformdiv">
+		<form action="agentaction" method="post">
+						<!-- <div id="categorydiv" class="form-group">
+					    	<label for="category" style="font-weight:bold; color : #620000">Category:</label>
+					    	<select name="category" id="category" class="form-control">
+								<option value="SUC">SUC</option>
+								<option value="LF">LF</option>
+							</select>
+						</div>	 -->
+						<input type="hidden" value="${useremail}" name="useremail">
+						<input type="hidden" value="${grid}" name="grid">
+						<div id="grievancenotediv" class="form-group">
+					    	<textarea name="grievancecomment" rows="5" cols="20" id="grievancenote" class="form-control">
+							</textarea>
+						</div>
+					    <button type="submit" class="btn btn-primary" value="login" id="submitbutton">Submit Comment</button>
+		</form>
 		</div>
-<!-- 				<button onclick="animdiv()" id="buttontoggle">Enter message</button>
- -->		
- <button id="hideshow">Enter message</button>
+		</div>
+ 		<div id="entermessage2" >
+ 			<svg height="100%" width="100%" style="background-color : white">
+ 			<g>
+            	<polygon id="commentclick" points="6,34 615,34 615,4 6,4" fill="white" stroke="white" stroke-width="1" />
+         		<text x="10" y="26" font-size="15px" fill="#620000" style="font-weight : bold; font-family: Verdana, Geneva, Tahoma, sans-serif">Enter Message</text>
+            	<polygon id="commentclick" points="625,32 645,18 625,6" fill="#620000" stroke="#620000" stroke-width="2" />
+             </g>
+ 			</svg>
+ 			<!-- <button id="hideshow">Enter message</button> -->
+ 		</div>	
 		</div>
 		</div>
 		<div class="row" id="footerdiv">

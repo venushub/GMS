@@ -65,13 +65,14 @@ public class CreateNewGrievanceServ extends HttpServlet {
 		prstmt.executeUpdate();
 		
 		
-		String query1 = "INSERT INTO Grievance.grievance_comments(comment_id,gr_id,user_email,comment_msg,comment_time_stamp) VALUES(?,?,?,?,?)";
+		String query1 = "INSERT INTO Grievance.grievance_comments(comment_id,gr_id,user_email,user_role,comment_msg,comment_time_stamp) VALUES(?,?,?,?,?,?)";
 		PreparedStatement prstmt1 = con.prepareStatement(query1);
 		prstmt1.setInt(1, com_id);
 		prstmt1.setInt(2, gr_id);
 		prstmt1.setString(3, useremail);
-		prstmt1.setString(4, grievancenote);
-		prstmt1.setTimestamp(5, timestamp);
+		prstmt1.setString(4, sesh.getAttribute("userrole").toString());
+		prstmt1.setString(5, grievancenote);
+		prstmt1.setTimestamp(6, timestamp);
 		prstmt1.executeUpdate();
 
 	    con.close();

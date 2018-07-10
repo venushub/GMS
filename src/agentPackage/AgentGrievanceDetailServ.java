@@ -43,6 +43,7 @@ public class AgentGrievanceDetailServ extends HttpServlet {
 	request.setAttribute("timestamp", gd.get_timestamp());
 	request.setAttribute("agentstatus", gd.get_agent_status());
 	request.setAttribute("comments", cid.getComments(grid));
+	request.setAttribute("grid", grid);
 	request.getRequestDispatcher("/WEB-INF/AgentGrievanceDetail.jsp").forward(request, response);
 	}
 }
