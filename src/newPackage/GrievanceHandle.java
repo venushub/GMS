@@ -13,7 +13,7 @@ import newPackage.CommentsId;
 public class GrievanceHandle {
 	
 	
-	public void addComment(String comment, String agentuser, int gr_id ) {
+	public void addComment(String comment, String agentuser, String userrole ,int gr_id ) {
 		
 		
 		CommentsId cid = new CommentsId();
@@ -36,17 +36,32 @@ public class GrievanceHandle {
 			stmt1.setInt(1, comid);
 			stmt1.setInt(2, gr_id);
 			stmt1.setString(3, agentuser);
+			
+			if(userrole.equals("agent")){
 			stmt1.setString(4, "agent");
+			} else {
+				stmt1.setString(4, "customer");
+
+			}
+			
 			stmt1.setString(5, comment);
 			stmt1.setTimestamp(6, timestamp);
 			stmt1.executeUpdate();
 			
 			
-			
+		
 			String query2 = "UPDATE Grievance.grievance_main SET agent_status = ? , user_status = ? WHERE gr_id = ?";
 			PreparedStatement stmt2=con.prepareStatement(query2);
+			
+			
+			if(userrole.equals("agent")){
 			stmt2.setString(1, "commented");
 			stmt2.setString(2, "commented");
+			} else {
+				stmt2.setString(1, "open");
+				stmt2.setString(2, "open");
+				
+			}
 			stmt2.setInt(3, gr_id);
 			stmt2.executeUpdate();
 		    con.close();

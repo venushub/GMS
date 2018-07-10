@@ -1,4 +1,4 @@
-package agentPackage;
+package customerPackage;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -23,15 +23,16 @@ import newPackage.CommentsId;
 import newPackage.GrievanceHandle;
 
 
-@WebServlet(urlPatterns= "/agentaction")
-public class AgentGrievanceHandlerServ extends HttpServlet {
+@WebServlet(urlPatterns= "/customerdetailaction")
+public class CustomerDetailHandlerServ extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	String comment = request.getParameter("grievancecomment");
 	
-	HttpSession sesh = request.getSession(false);
 	
-	String userrole = "agent";
+	HttpSession sesh = request.getSession(false);
+	String userrole = "customer";
+	
 	
 	String useremail = sesh.getAttribute("useremail").toString();
 	String grid = request.getParameter("grid");
@@ -40,7 +41,7 @@ public class AgentGrievanceHandlerServ extends HttpServlet {
 	GrievanceHandle gh = new GrievanceHandle();
 	gh.addComment(comment, useremail, userrole, gr_id);
 	
-	String redirectpage = "agentgrievancedetail?gr_id="+grid;
+	String redirectpage = "customergrievancedetail?gr_id="+grid;
 	response.sendRedirect(redirectpage);
 	}
 }

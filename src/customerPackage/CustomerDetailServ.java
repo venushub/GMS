@@ -1,4 +1,4 @@
-package agentPackage;
+package customerPackage;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -22,8 +22,8 @@ import newPackage.GrievanceData;
 import newPackage.CommentsId;
 
 
-@WebServlet(urlPatterns= "/agentgrievancedetail")
-public class AgentGrievanceDetailServ extends HttpServlet {
+@WebServlet(urlPatterns= "/customergrievancedetail")
+public class CustomerDetailServ extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	String number = request.getParameter("gr_id");
@@ -33,17 +33,13 @@ public class AgentGrievanceDetailServ extends HttpServlet {
 	gd.getSetGrievanceData(grid);
 	
 	CommentsId cid = new CommentsId();
-	
-	
-	
-	
 	request.setAttribute("useremail", gd.get_user_email());
 	request.setAttribute("grtype", gd.get_gr_type());
 	request.setAttribute("grmsg", gd.get_gr_msg());
 	request.setAttribute("timestamp", gd.get_timestamp());
-	request.setAttribute("agentstatus", gd.get_agent_status());
-	request.setAttribute("comments", cid.getComments(grid)); //returns arraylist of comments
+	request.setAttribute("userstatus", gd.get_user_status());
+	request.setAttribute("comments", cid.getComments(grid));
 	request.setAttribute("grid", grid);
-	request.getRequestDispatcher("/WEB-INF/AgentGrievanceDetail.jsp").forward(request, response);
+	request.getRequestDispatcher("/WEB-INF/CustomerGrievanceDetail.jsp").forward(request, response);
 	}
 }
