@@ -22,18 +22,18 @@
 			<div class="col-sm-6 text-right" id="agrow1co6-1"><div id="welcome">Welcome ${username}</div></div>
 			<div class="col-sm-6 text-right align-middle" id="agrow1co6-2"><div id="logoutbuttondiv"><a href="logout"><button class="button" id="logoutbutton">Logout</button></a></div></div>			
 		</div>
-		<div class="row mt-2">
-			<div class="col-sm-12">
+		
+		<div class="row" id="detailrow" >
+			<div class="col-sm-4  d-flex flex-column align-self-center justify-content-end" id="sidedetails">
+				
+				<div>
 				<svg width =65 height = 55>
 				<a href="adminusermgmt">
             		<polygon id="backarrow" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#620000" stroke="#620000" stroke-width="2" />
         		</a>
         		</svg>
-			</div>
-		</div>
-		
-		<div class="row" id="detailrow" >
-			<div class="col-sm-4  d-flex flex-column align-self-center" id="sidedetails">
+				</div>
+				<div style="height:100px" id="khalidiv"></div>
 				<div ><b>Customer Username</b></div>
 				<div ><h3>${useremail}</h3></div>
 				
@@ -46,21 +46,53 @@
 				<div ><b>Status</b></div>
 				<div><h3>${agentstatus}</h3></div>
 			</div>
+		<div class="col-sm-7 d-flex text-center flex-column" id="commentscol">
+		<div style="margin:0px ;background-color : #620000 ; color : white">
+			<h3>Comments</h3>
+		</div>
+		<div  class="table table-responsive" style="height : 100%  ;margin : 0px; ">
+		<table>
+		<thead></thead>
+		<tbody>
+		<c:forEach var="i" begin="1" end="15">
+		<tr id="tbcommentrow">
+			<td id="tbcommentcol">
+				<div class="commentitem">
+					<div id="commenthead"><b>Customer</b></div>
+					<div id="commentbody">
+						${comments[0]}
+					</div>
+				</div>
+			</td>
+		</tr>
+		</c:forEach>
+		</tbody>
+		</table>
+		</div>
+	    <div id="sendcomment"> 
 		
 		
-		<div class="col-sm-6" id="commentscol">
-			
-				Comments
-			
+		
+		hello
+			<!-- 	<form>
+				<div>
+					<label for="emtermessage"></label>
+					<input type="text" name="comment" id="enter Message">
+				</div>
+				<div>
+					<button type="submit" class="btn btn-primary" value="login" id="submitbutton">Submit</button>
+				</div>
+				</form> -->
 		</div>
+<!-- 				<button onclick="animdiv()" id="buttontoggle">Enter message</button>
+ -->		
+ <button id="hideshow">Enter message</button>
 		</div>
-		<div class="row" id="agrow2div">
-			
 		</div>
 		<div class="row" id="footerdiv">
 			<div class="col-sm-12" id="footercol12-1div">©NSDL | Site Map | Help Desk</div>
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="./JS/agscript.js"></script>
+<script type="text/javascript" src="./JS/agentdetail.js"></script>
 </html>

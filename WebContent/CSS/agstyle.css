@@ -191,6 +191,9 @@
 #tablecolumn {
 	width : 25% ;
 }
+
+
+
 /* 
 #tablerow {
 	height : 50px;
@@ -257,7 +260,7 @@
 
 #detailrow {
 	
-	height : 70%;
+	height : 89%;
 	border-style : solid;
 	border-color : white;
 	
@@ -281,5 +284,62 @@
 	
 	border-style : solid;
 	border-color : #620000;
-	margin : 10px;
+	margin-left : 6.5%;
+	height : 100%;
+	padding : 0px;
+	
 }
+
+
+.commentitem {
+	
+	border-style : solid;
+	border-color : #ffd7c4;
+	text-align : left;
+	margin : 0.5% 1% 0.5% 1%;
+	background-color : white;	
+	width : 98%;
+	padding-left : 1%;
+	border-radius : 10px;
+	
+}
+
+/* #tbcommentcol {
+	width : 100px;
+}
+
+#tbcommentrow {
+	width : 100px;
+} */
+
+
+.table tr {
+	
+}
+
+.table td {
+	width : 10%;
+	padding : 0px;
+	border : 0px;
+}
+
+#sendcomment {
+	
+	border-style : solid;
+	border-left-width : 0px;
+	border-right-width : 0px;
+	border-bottom-width : 0px;
+	border-color : #620000;
+	height : 80%;
+	
+}
+
+/* 
+#content{
+  display:none;
+}
+#content.show{
+  display:block; P.S: Use `!important` if missing `#content` (selector specificity).
+}
+
+ */
