@@ -81,3 +81,17 @@ CREATE TABLE grievance.user_main
   gr_time_stamp timestamp without time zone,
   CONSTRAINT user_main_pkey PRIMARY KEY (user_email)
 )
+
+
+
+///////////////////////////////////////////////////////////
+
+
+CREATE TABLE grievance.category_main
+(
+  category_id integer NOT NULL,
+  category_name character varying(50) NOT NULL,
+  user_email character varying(50) NOT NULL,
+  created_time_stamp timestamp without time zone,
+  CONSTRAINT category_main_pkey PRIMARY KEY (category_id)
+)

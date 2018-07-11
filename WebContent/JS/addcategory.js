@@ -7,14 +7,12 @@ gral.style.color = "white";
 function func1(grng) {
 	grng.style.backgroundColor = "#9f0000";
 	grng.style.color = "white";
-/*	document.getElementById("tablelink").style.color = "white";
-*/}
+}
 
 function func2(grng) {
 	grng.style.backgroundColor = "white";
 	grng.style.color = "#620000";
-/*	document.getElementById("tablelink").style.color = "#620000";
-*/}
+}
 
 
 
@@ -45,7 +43,7 @@ window.onresize = function() {
 };*/
 
 
-/*
+
 document.getElementById("backarrow").addEventListener("mouseover", changeme4);
 document.getElementById("backarrow").addEventListener("mouseout", rechangeme4 );
 
@@ -66,4 +64,4 @@ function rechangeme4(){
  
  function rechangeme(){
 	 document.getElementById("submitbutton").style.backgroundColor = "#620000";
- }*/
+ }

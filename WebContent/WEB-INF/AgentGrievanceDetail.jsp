@@ -28,7 +28,7 @@
 				
 				<div>
 				<svg width =65 height = 55>
-				<a href="adminusermgmt">
+				<a href="agenthome">
             		<polygon id="backarrow" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#620000" stroke="#620000" stroke-width="2" />
         		</a>
         		</svg>
@@ -54,14 +54,24 @@
 		<table>
 		<thead></thead>
 		<tbody>
-		<c:forEach var="i" begin="1" end="15">
+		<c:forEach var="i" begin="1" end="${comments.size()}">
 		<tr id="tbcommentrow">
 			<td id="tbcommentcol">
 				<div class="commentitem">
-					<div id="commenthead"><b>Customer</b></div>
-					<div id="commentbody">
-						${comments[0]}
-					</div>
+					<c:if test = "${comments[i-1][2] == 'customer'}" >
+							<div id="commenthead" style="color : #e2b616"><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][4]}</b></div>
+							<div id="commentbody" style="font-size : 20px">
+								${comments[i-1][3]}
+							</div>
+					 	</c:if>
+					 
+				<c:if test = "${comments[i-1][2] == 'agent'}">
+							<div id="commenthead" style="color : #f9186f; text-align : right"><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][4]}</b></div>
+							<div id="commentbody" style="font-size : 20px;  text-align : right">
+								${comments[i-1][3]}
+							</div>
+					    </c:if>
+					
 				</div>
 			</td>
 		</tr>

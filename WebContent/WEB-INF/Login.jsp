@@ -35,7 +35,7 @@
 		<div class="row" id="emptyrow"></div>
 		<div class="row" id="emptyrow"></div>
 		<div class="row" id="emptyrow"></div>
-		<div class="row"><div class="col-sm-12 text-center" style="height:80px"><h2 style="color :#9f0000">Please enter your Registration credentials</h2></div></div>
+		<div class="row"><div class="col-sm-12 text-center" style="height:80px"><h2 style="color :#9f0000">Please enter your Login credentials</h2></div></div>
 		<div class="row" id="emptyrow"></div>
 					<div class="row">
 				<div class="col-sm-4"></div>

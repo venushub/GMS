@@ -24,7 +24,10 @@ public class AgentHomeServ extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/*		session.setAttribute("username", username);
+
+		HttpSession sesh = request.getSession(false);
+		if( sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("agent")){
+		/*		session.setAttribute("username", username);
 		session.setAttribute("useremail", useremail);*/
 		ArrayList<ArrayList> tableelems = new ArrayList<ArrayList>();
        /* for(int i=1;i<10;i++){
@@ -74,8 +77,8 @@ public class AgentHomeServ extends HttpServlet {
 		request.setAttribute("tableelems", tableelems);
 		
 		
-		HttpSession sesh = request.getSession(false);
-		if( sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("agent")){
+		
+	
 			request.getRequestDispatcher("/WEB-INF/AgentHome.jsp").forward(request, response);
 		} else {
 			response.sendRedirect("login");

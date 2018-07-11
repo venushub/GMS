@@ -27,10 +27,13 @@ import newPackage.GrievanceHandle;
 public class CustomerDetailHandlerServ extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	String comment = request.getParameter("grievancecomment");
-	
 	
 	HttpSession sesh = request.getSession(false);
+	if(  sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("customer")){
+
+	
+		String comment = request.getParameter("grievancecomment");
+
 	String userrole = "customer";
 	
 	
@@ -42,6 +45,16 @@ public class CustomerDetailHandlerServ extends HttpServlet {
 	gh.addComment(comment, useremail, userrole, gr_id);
 	
 	String redirectpage = "customergrievancedetail?gr_id="+grid;
-	response.sendRedirect(redirectpage);
+		response.sendRedirect(redirectpage);
+	} else {
+		response.sendRedirect("login");
+	}
+	
 	}
 }
+
+
+
+
+
+

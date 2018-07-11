@@ -31,3 +31,27 @@ $(document).ready(function(){
     
     
 });
+
+
+
+document.getElementById("backarrow").addEventListener("mouseover", changeme4);
+document.getElementById("backarrow").addEventListener("mouseout", rechangeme4 );
+
+function changeme4(){
+    document.getElementById("backarrow").setAttribute("fill" , "#9f0000");
+}
+
+function rechangeme4(){
+    document.getElementById("backarrow").setAttribute("fill" , "#620000");
+}
+
+ document.getElementById("submitbutton").addEventListener("mouseover", changeme);
+ document.getElementById("submitbutton").addEventListener("mouseout", rechangeme);
+
+ function changeme(){
+	 document.getElementById("submitbutton").style.backgroundColor = "#9f0000";
+ }
+ 
+ function rechangeme(){
+	 document.getElementById("submitbutton").style.backgroundColor = "#620000";
+ }

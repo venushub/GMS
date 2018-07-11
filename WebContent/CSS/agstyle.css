@@ -241,7 +241,7 @@
 } 
 
 .tablehyper a{
-	color : #620000;
+	color : #e2b616;
 	text-decoration : none;
 }
 
@@ -300,6 +300,7 @@
 	background-color : white;	
 	width : 98%;
 	padding-left : 1%;
+	padding-right : 1%;
 	border-radius : 10px;
 	
 }
@@ -398,4 +399,29 @@
 	border-color : #620000;
 	box-shadow: none;
 }
+
+#addcategoryrow2arrowdiv {
+	
+	margin-top : 2%;
+	
+
+}
+
+#addcategoryrow2catlistdiv {
+	
+	margin-top : 5%;
+	border-color: #620000;
+	border-style: solid;
+	padding : 0px;
+
+}
+
+#addcategoryrow2addcatdiv {
+	
+	margin-top : 10%;
+	margin-left : 5%;
+
+}
+
+
 

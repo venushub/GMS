@@ -26,6 +26,12 @@ import newPackage.CommentsId;
 public class AgentGrievanceDetailServ extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+	HttpSession sesh = request.getSession(false);
+	
+	if(  sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("agent")){
+	
 	String number = request.getParameter("gr_id");
 	int grid = Integer.parseInt(number);
 	
@@ -42,8 +48,17 @@ public class AgentGrievanceDetailServ extends HttpServlet {
 	request.setAttribute("grmsg", gd.get_gr_msg());
 	request.setAttribute("timestamp", gd.get_timestamp());
 	request.setAttribute("agentstatus", gd.get_agent_status());
-	request.setAttribute("comments", cid.getComments(grid)); //returns arraylist of comments
+	request.setAttribute("comments", cid.getComments(grid)); //returns arraylist of arraylist of comment data
 	request.setAttribute("grid", grid);
-	request.getRequestDispatcher("/WEB-INF/AgentGrievanceDetail.jsp").forward(request, response);
+	
+	
+	
+	
+	
+		request.getRequestDispatcher("/WEB-INF/AgentGrievanceDetail.jsp").forward(request, response);
+	} else {
+		response.sendRedirect("login");
+	}
+	
 	}
 }

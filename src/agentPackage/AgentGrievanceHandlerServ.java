@@ -27,10 +27,13 @@ import newPackage.GrievanceHandle;
 public class AgentGrievanceHandlerServ extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	String comment = request.getParameter("grievancecomment");
 	
 	HttpSession sesh = request.getSession(false);
+
+	if(  sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("agent")){
 	
+	String comment = request.getParameter("grievancecomment");
+
 	String userrole = "agent";
 	
 	String useremail = sesh.getAttribute("useremail").toString();
@@ -41,6 +44,14 @@ public class AgentGrievanceHandlerServ extends HttpServlet {
 	gh.addComment(comment, useremail, userrole, gr_id);
 	
 	String redirectpage = "agentgrievancedetail?gr_id="+grid;
+	
+	
+	
+	
 	response.sendRedirect(redirectpage);
+	} else {
+		response.sendRedirect("login");
+	}
+	
 	}
 }

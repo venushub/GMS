@@ -26,6 +26,9 @@ public class CreateNewGrievanceServ extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession sesh = request.getSession(false);
+		
+		if(  sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("customer")){
+
 		GrievanceId gid = new GrievanceId();
 		int gr_id = gid.getGrievanceId();
 		gr_id = gr_id + 1;
@@ -84,7 +87,6 @@ public class CreateNewGrievanceServ extends HttpServlet {
 		/*request.setAttribute("username", "venu");
 		request.setAttribute("userid", "1234");*/
 		
-		if(  sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("customer")){
 			response.sendRedirect("home");
 		} else {
 			response.sendRedirect("login");

@@ -20,7 +20,7 @@
 			<div class="col-sm-offset-12 text-center" id="agrow1co6-1">Welcome ${username}</div>
 			<div class="col-sm-offset-12 text-center" id="agrow1co6-2"><button>Hello</button></div> --%>
 			<div class="col-sm-6 text-right" id="agrow1co6-1"><div id="welcome">Welcome ${username}</div></div>
-			<div class="col-sm-6 text-right align-middle" id="agrow1co6-2"><div id="logoutbuttondiv"><a href="logout"><button class="button" id="logoutbutton">Logout</button></a></div></div>			
+			<div class="col-sm-6 text-right align-middle" id="agrow1co6-2"><div id="logoutbuttondiv"><a href="login"><button class="button" id="logoutbutton">Logout</button></a></div></div>			
 		</div>
 		
 		<div class="row" id="detailrow" >
@@ -28,7 +28,7 @@
 				
 				<div>
 				<svg width =65 height = 55>
-				<a href="adminusermgmt">
+				<a href="home">
             		<polygon id="backarrow" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#620000" stroke="#620000" stroke-width="2" />
         		</a>
         		</svg>
@@ -54,14 +54,24 @@
 		<table>
 		<thead></thead>
 		<tbody>
-		<c:forEach var="i" begin="1" end="15">
+		<c:forEach var="i" begin="1" end="${comments.size()}">
 		<tr id="tbcommentrow">
 			<td id="tbcommentcol">
 				<div class="commentitem">
-					<div id="commenthead"><b>Customer</b></div>
-					<div id="commentbody">
-						${comments[0]}
-					</div>
+					<c:if test = "${comments[i-1][2] == 'customer'}" >
+							<div id="commenthead" style="color : #e2b616; text-align : right"><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][4]}</b></div>
+							<div id="commentbody" style="font-size : 20px;  text-align : right">
+								${comments[i-1][3]}
+							</div>
+					 	</c:if>
+					 
+				<c:if test = "${comments[i-1][2] == 'agent'}">
+							<div id="commenthead" style="color : #f9186f; "><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][4]}</b></div>
+							<div id="commentbody" style="font-size : 20px; ">
+								${comments[i-1][3]}
+							</div>
+					    </c:if>
+					
 				</div>
 			</td>
 		</tr>
@@ -75,7 +85,7 @@
  -->		<div style="border-color : white ; border-style:solid;float:right">
 		<svg height="28px" width="30px" style="background-color: white" id="hidecommentdiv">
 		
-			<polygon id="commentclick" points="6,6 26,6 15,20" fill="#e2b616" stroke="#e2b616" stroke-width="1" />
+			<polygon id="commentclick" points="6,6 26,6 16,20" fill="#e2b616" stroke="#e2b616" stroke-width="1" />
 			
 		
 		</svg>

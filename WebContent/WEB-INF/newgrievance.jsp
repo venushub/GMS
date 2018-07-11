@@ -48,6 +48,9 @@
 						<div id="categorydiv" class="form-group">
 					    	<label for="category" style="font-weight:bold; color : #620000">Category:</label>
 					    	<select name="category" id="category" class="form-control">
+					    		<c:forEach var="i" begin="1" end="${categories.size()}">
+									<option value="${categories[i-1]}">${categories[i-1]}</option>
+								</c:forEach>
 								<option value="SUC">SUC</option>
 								<option value="LF">LF</option>
 							</select>

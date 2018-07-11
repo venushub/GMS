@@ -28,6 +28,9 @@ public class HomepageServ extends HttpServlet {
 		
 		
 		HttpSession sesh = request.getSession(false);
+		
+		if( sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("customer")){
+
 		String useremail = sesh.getAttribute("useremail").toString();
 /*		session.setAttribute("username", username);
 		session.setAttribute("useremail", useremail);*/
@@ -74,7 +77,6 @@ public class HomepageServ extends HttpServlet {
 		Collections.reverse(tableelems);
 		request.setAttribute("tableelems", tableelems);
 		
-		if( sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("customer")){
 			request.getRequestDispatcher("/WEB-INF/Home.jsp").forward(request, response);
 		} else {
 			response.sendRedirect("login");

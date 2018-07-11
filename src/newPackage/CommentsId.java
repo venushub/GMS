@@ -36,30 +36,40 @@ public int getCommentId() {
 		return maxID;
 	}
 	
-	public ArrayList<String> getComments(int grid){
-		
-		ArrayList<String> lista = new ArrayList<String>();
-		
-		try {
-	           Class.forName("org.postgresql.Driver");
-	    } catch (ClassNotFoundException e) {
-	           System.out.println("Class not found " + e);
-	    }
-		
-		try {
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
-			String query = "Select comment_msg FROM Grievance.grievance_comments WHERE gr_id="+grid;
-			PreparedStatement stmt1=con.prepareStatement(query);
-			ResultSet rs = stmt1.executeQuery();
-			System.out.println(rs);
-			while(rs.next()){
-				lista.add(rs.getString(1).toString());
-			}
-		    con.close();
-			} catch (SQLException e) {
-		        System.out.println(e);
-			}
-		return lista ;
-		
-	}
+
+public ArrayList<ArrayList> getComments(int grid){
+	
+	
+	ArrayList<ArrayList> commentelems = new ArrayList<ArrayList>();
+	
+	try {
+           Class.forName("org.postgresql.Driver");
+    } catch (ClassNotFoundException e) {
+           System.out.println("Class not found " + e);
+    }
+	
+	try {
+		Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
+		String query = "Select comment_id, user_email, user_role, comment_msg, comment_time_stamp FROM Grievance.grievance_comments WHERE gr_id="+grid;
+		PreparedStatement stmt1=con.prepareStatement(query);
+		ResultSet rs = stmt1.executeQuery();
+		System.out.println(rs);
+		while(rs.next()){
+			ArrayList<String> lista = new ArrayList<String>();
+			lista.add(rs.getString("comment_id"));
+			lista.add(rs.getString("user_email"));
+			lista.add(rs.getString("user_role"));
+			lista.add(rs.getString("comment_msg"));
+			lista.add(rs.getString("comment_time_stamp"));
+			
+			commentelems.add(lista);
+			
+		}
+	    con.close();
+		} catch (SQLException e) {
+	        System.out.println(e);
+		}
+	return commentelems ;
+
+}
 }

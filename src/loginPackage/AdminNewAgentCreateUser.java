@@ -27,6 +27,12 @@ public class AdminNewAgentCreateUser extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+        HttpSession sesh = request.getSession(false);
+
+		if( sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("admin")){
+
+		
 		UserId uid = new UserId();
 		int user_id = uid.getUserId();
 		user_id = user_id + 1;
@@ -39,8 +45,6 @@ public class AdminNewAgentCreateUser extends HttpServlet {
         String lcr = lc.checkUserinDatabase(email);
         
         
-        HttpSession sesh = request.getSession(false);
-		if( sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("admin")){
 
 	        if(lcr == "FALSE"){
 	        	uid.registerNewUser(user_id, name,email, password,role,timestamp);
