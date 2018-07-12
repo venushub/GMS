@@ -32,16 +32,24 @@ public class AgentGrievanceHandlerServ extends HttpServlet {
 
 	if(  sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("agent")){
 	
+	String grid = request.getParameter("grid");
+	int grida = Integer.parseInt(grid);
+	
+	
+	GrievanceData gd = new GrievanceData();
+	gd.getSetGrievanceData(grida);
+	String prevagentstatus = gd.get_agent_status();
+	String prevuserstatus = gd.get_user_status();
+	String action = request.getParameter("whataction");
 	String comment = request.getParameter("grievancecomment");
 
 	String userrole = "agent";
 	
 	String useremail = sesh.getAttribute("useremail").toString();
-	String grid = request.getParameter("grid");
 	int gr_id = Integer.parseInt(grid);
 	
 	GrievanceHandle gh = new GrievanceHandle();
-	gh.addComment(comment, useremail, userrole, gr_id);
+	gh.addComment(comment, useremail, userrole, gr_id, action, prevagentstatus, prevuserstatus);
 	
 	String redirectpage = "agentgrievancedetail?gr_id="+grid;
 	

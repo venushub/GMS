@@ -128,5 +128,5 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="./JS/agentdetail.js"></script>
+<script type="text/javascript" src="./JS/studentdetail.js"></script>
 </html>

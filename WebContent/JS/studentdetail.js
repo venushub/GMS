@@ -81,7 +81,7 @@ function rechangeme4(){
 
  }
  
- function rechangeme5(){
+ function rechangeme(){
 	 document.getElementById("submitclosebutton").style.backgroundColor = "#620000";
 	 document.getElementById("submitclosebutton").style.color = "white";
 

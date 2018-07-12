@@ -400,6 +400,15 @@
 	box-shadow: none;
 }
 
+
+#submitclosebutton {
+	background-color : #620000;
+	font-weight : bold;
+	border-color : #620000;
+	box-shadow: none;
+}
+
+
 #addcategoryrow2arrowdiv {
 	
 	margin-top : 2%;
@@ -423,5 +432,11 @@
 
 }
 
+#openclosegrdiv {
+	background-color : #620000;
+	font-weight : bold;
+	border-color : #620000;
+	box-shadow: none;
+}
 
 
