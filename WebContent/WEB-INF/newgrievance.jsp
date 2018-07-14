@@ -51,8 +51,8 @@
 					    		<c:forEach var="i" begin="1" end="${categories.size()}">
 									<option value="${categories[i-1]}">${categories[i-1]}</option>
 								</c:forEach>
-								<option value="SUC">SUC</option>
-								<option value="LF">LF</option>
+						<!-- 		<option value="SUC">SUC</option>
+								<option value="LF">LF</option> -->
 							</select>
 						</div>	
 						<div id="grievancenotediv" class="form-group">

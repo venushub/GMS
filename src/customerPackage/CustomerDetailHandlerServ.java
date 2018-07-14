@@ -31,18 +31,22 @@ public class CustomerDetailHandlerServ extends HttpServlet {
 	HttpSession sesh = request.getSession(false);
 	if(  sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("customer")){
 
-	
-		String comment = request.getParameter("grievancecomment");
+	String grid = request.getParameter("grid");
+	String comment = request.getParameter("grievancecomment");
 
 	String userrole = "customer";
-	
-	
+	int grida = Integer.parseInt(grid);
+	GrievanceData gd = new GrievanceData();
+	gd.getSetGrievanceData(grida);
+	String prevagentstatus = gd.get_agent_status();
+	String prevuserstatus = gd.get_user_status();
+	String action = request.getParameter("whataction");
+
+
 	String useremail = sesh.getAttribute("useremail").toString();
-	String grid = request.getParameter("grid");
-	int gr_id = Integer.parseInt(grid);
 	
 	GrievanceHandle gh = new GrievanceHandle();
-	gh.addComment(comment, useremail, userrole, gr_id);
+	gh.addComment(comment, useremail, userrole, grida, action, prevagentstatus, prevuserstatus);
 	
 	String redirectpage = "customergrievancedetail?gr_id="+grid;
 		response.sendRedirect(redirectpage);

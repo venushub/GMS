@@ -27,7 +27,7 @@ import newPackage.GrievanceHandle;
 public class AgentGrievanceHandlerServ extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+
 	HttpSession sesh = request.getSession(false);
 
 	if(  sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("agent")){
@@ -52,9 +52,6 @@ public class AgentGrievanceHandlerServ extends HttpServlet {
 	gh.addComment(comment, useremail, userrole, gr_id, action, prevagentstatus, prevuserstatus);
 	
 	String redirectpage = "agentgrievancedetail?gr_id="+grid;
-	
-	
-	
 	
 	response.sendRedirect(redirectpage);
 	} else {

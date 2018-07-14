@@ -24,7 +24,7 @@
 		</div>
 		
 		<div class="row" id="detailrow" >
-			<div class="col-sm-4  d-flex flex-column align-self-center justify-content-end" id="sidedetails">
+			<div class="col-sm-4  " id="sidedetails">
 				
 				<div>
 				<svg width =65 height = 55>
@@ -45,7 +45,42 @@
 				
 				<div style="color : #e2b616"><b>Status</b></div>
 				<div><h3>${userstatus}</h3></div>
+				
+				
+				<div style="height:20px;" id="khalidiv" class="p-2"></div>
+				
+				<c:if test="${agentstatus == 'closed'}">
+				<button class="btn btn-primary" id="openclosegrdiv">Reopen !</button>
+				</c:if>
+				
 			</div>
+			
+			<div class="col-sm-4" id="closecomment" style="border-style:solid; border-color : #9f0000; height : 70%; margin-left : 1%; margin-top:7%; padding : 0px; display: none">
+		
+				<div style="margin:0px ;background-color : #9f0000 ; color : white; text-align : center">
+					<h4>Close Grievance</h4>
+				</div>
+			
+				<div style="border-color : white ; border-style:solid;float:right">
+					<svg height="28px" width="30px" style="background-color: white" id="hidecommentdiv">
+						<polygon id="hideclosecommentdiv" points="6,6 26,6 15,20" fill="#e2b616" stroke="#e2b616" stroke-width="1" />
+					</svg>
+				</div>
+				<div style="height:10px;" id="khalidiv"></div>
+				<div id="commentformdiv" >
+					<form action="customerdetailaction" method="post">
+						<input type="hidden" value="${useremail}" name="useremail">
+						<input type="hidden" value="${grid}" name="grid">
+						<input type="hidden" value="reopen" name="whataction">
+						<div id="grievancenotediv" class="form-group">
+					    	<textarea name="grievancecomment" rows="5" cols="20" id="grievancenote" class="form-control">
+							</textarea>
+						</div>
+					    <button type="submit" class="btn btn-primary" value="login" id="submitclosebutton">Reopen !</button>
+					</form>
+				</div>
+		</div>	
+			
 		<div class="col-sm-7 d-flex text-center flex-column" id="commentscol">
 		<div style="margin:0px ;background-color : #620000 ; color : white">
 			<h3>Comments</h3>
@@ -64,14 +99,13 @@
 								${comments[i-1][3]}
 							</div>
 					 	</c:if>
-					 
+	
 				<c:if test = "${comments[i-1][2] == 'agent'}">
 							<div id="commenthead" style="color : #f9186f; "><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][4]}</b></div>
 							<div id="commentbody" style="font-size : 20px; ">
 								${comments[i-1][3]}
 							</div>
 					    </c:if>
-					
 				</div>
 			</td>
 		</tr>
@@ -103,6 +137,7 @@
 						</div>	 -->
 						<input type="hidden" value="${useremail}" name="useremail">
 						<input type="hidden" value="${grid}" name="grid">
+						<input type="hidden" value="comment" name="whataction">
 						<div id="grievancenotediv" class="form-group">
 					    	<textarea name="grievancecomment" rows="5" cols="20" id="grievancenote" class="form-control">
 							</textarea>
@@ -111,6 +146,9 @@
 		</form>
 		</div>
 		</div>
+		
+		<c:if test="${userstatus ne 'closed'}">
+		
  		<div id="entermessage2" >
  			<svg height="100%" width="100%" style="background-color : white">
  			<g>
@@ -121,6 +159,9 @@
  			</svg>
  			<!-- <button id="hideshow">Enter message</button> -->
  		</div>	
+ 		
+ 		</c:if>
+ 		
 		</div>
 		</div>
 		<div class="row" id="footerdiv">

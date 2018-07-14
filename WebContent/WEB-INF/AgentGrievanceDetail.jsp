@@ -50,7 +50,10 @@
 				<div style="height:20px;" id="khalidiv" class="p-2"></div>
 				
 			
-				<button class="btn btn-primary" id="openclosegrdiv">Close !</button>	
+				<c:if test="${agentstatus ne 'closed'}">
+				<button class="btn btn-primary" id="openclosegrdiv">Close !</button>
+				</c:if>	
+			
 			</div>
 			
 			
@@ -75,12 +78,14 @@
 				    	<textarea name="grievancecomment" rows="5" cols="20" id="grievancenote" class="form-control">
 						</textarea>
 					</div>
+					
+					
+					
 				    <button type="submit" class="btn btn-primary" value="login" id="submitclosebutton">Close !</button>
+				
+				
 				</form>
 			</div>
-			
-			
-		
 		</div>
 		<div class="col-sm-7 d-flex text-center flex-column" id="commentscol">
 		<div style="margin:0px ;background-color : #620000 ; color : white">
@@ -134,6 +139,7 @@
 			</form>
 		</div>
 		</div>
+		<c:if test="${agentstatus ne 'closed'}">
  		<div id="entermessage2">
  			<svg height="100%" width="100%" style="background-color : white">
 	 			<g>
@@ -144,6 +150,7 @@
  			</svg>
  			<!-- <button id="hideshow">Enter message</button> -->
  		</div>	
+ 		</c:if>
 		</div>
 		</div>
 		<div class="row" id="footerdiv">
