@@ -42,7 +42,6 @@ public class AgentGrievanceHandlerServ extends HttpServlet {
 	String prevuserstatus = gd.get_user_status();
 	String action = request.getParameter("whataction");
 	String comment = request.getParameter("grievancecomment");
-
 	String userrole = "agent";
 	
 	String useremail = sesh.getAttribute("useremail").toString();

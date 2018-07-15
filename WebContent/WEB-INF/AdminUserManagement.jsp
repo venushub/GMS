@@ -20,6 +20,9 @@
 </head>
 <body id="index">
 	<div class="container" id="agbscontainer">
+	
+	
+	
 		<div class="row" id="agrow1div">
 		<%-- 
 			<div class="col-sm-offset-12 text-center" id="agrow1co6-1">Welcome ${username}</div>
@@ -27,16 +30,17 @@
 			<div class="col-sm-6 text-right" id="agrow1co6-1"><div id="welcome">Welcome ${username}</div></div>
 			<div class="col-sm-6 text-right align-middle" id="agrow1co6-2"><div id="logoutbuttondiv"><a href="logout"><button class="button" id="logoutbutton">Logout</button></a></div></div>			
 		</div>
-		<div class="row mt-2" ">
-			<div class="col-sm-12">
+			<div class="row" id="khalidiv" style="height:10%"></div>
+		<div class="row text-center" id="agrow2div">
+		
+		<div class="col-sm-2">
 				<svg width =65 height = 55>
 				<a href="adminhome">
             		<polygon id="backarrow" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#620000" stroke="#620000" stroke-width="2" />
         		</a>
         		</svg>
 			</div>
-		</div>
-		<div class="row text-center" id="agrow2div">
+		
 			<div class="col-sm-6 d-flex flex-column align-items-center align-self-center" id="customercol6-1">
 				<div class="p-2"><h1 style="color: #9f0000"><b>Customer</b></h1></div>
 				<div class="p-2">
@@ -56,7 +60,7 @@
 	        		</svg>
 				</div>
 			</div>
-			<div class="col-sm-6 d-flex flex-column align-items-center align-self-center" id="agentcol6-2" >
+			<div class="col-sm-4 d-flex flex-column align-items-center align-self-center" id="agentcol6-2" >
 				<div class="p-2" ><h1 style="color: #9f0000"><b>Agent</b></h1></div>
 				<div class="p-2">
 				<a href="adminaddagent">

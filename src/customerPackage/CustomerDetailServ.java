@@ -48,15 +48,10 @@ public class CustomerDetailServ extends HttpServlet {
 	request.setAttribute("userstatus", gd.get_user_status());
 	request.setAttribute("comments", cid.getComments(grid));
 	request.setAttribute("grid", grid);
-	
-	
 		request.getRequestDispatcher("/WEB-INF/CustomerGrievanceDetail.jsp").forward(request, response);
 	} else {
 		response.sendRedirect("login");
 	}
-	
-	
-	
 	
 	}
 }

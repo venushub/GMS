@@ -21,6 +21,21 @@ public class GrievanceHandle {
 		int comid = cid.getCommentId();
 		comid = comid + 1 ;
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		
+		String comment_type;
+		
+		
+		
+		if(action.equals("comment")){
+			comment_type = "normal";
+		} else if (action.equals("close")) {
+			comment_type = "closed";
+		} else {
+			comment_type = "reopen";
+		}
+		
+		
+		
 	
 		try {
 	           Class.forName("org.postgresql.Driver");
@@ -31,7 +46,7 @@ public class GrievanceHandle {
 		
 		try {
 			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
-			String query1 = "INSERT INTO Grievance.grievance_comments(comment_id,gr_id,user_email,user_role,comment_msg,comment_time_stamp) VALUES(?,?,?,?,?,?)";
+			String query1 = "INSERT INTO Grievance.grievance_comments(comment_id,gr_id,user_email,user_role,comment_type,comment_msg,comment_time_stamp) VALUES(?,?,?,?,?,?,?)";
 			PreparedStatement stmt1=con.prepareStatement(query1);
 			stmt1.setInt(1, comid);
 			stmt1.setInt(2, gr_id);
@@ -43,8 +58,9 @@ public class GrievanceHandle {
 				stmt1.setString(4, "customer");
 			}
 			
-			stmt1.setString(5, comment);
-			stmt1.setTimestamp(6, timestamp);
+			stmt1.setString(5, comment_type);
+			stmt1.setString(6, comment);
+			stmt1.setTimestamp(7, timestamp);
 			stmt1.executeUpdate();
 			
 			
@@ -131,12 +147,14 @@ public class GrievanceHandle {
 					
 				}	else {
 					
-					if(action.equals("commented"))
+					
+					
+					
+					if(action.equals("comment"))
 					{
 						stmt2.setString(1, "reopen");
 						stmt2.setString(2, "reopen");
 					}
-					
 				}
 			}
 			

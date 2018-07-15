@@ -305,6 +305,41 @@
 	
 }
 
+
+.commentitem1 {
+	
+	border-style : solid;
+	border-color : #9e0101;
+	text-align : left;
+	margin : 0.5% 1% 0.5% 1%;
+	background-color : white;	
+	width : 98%;
+	padding-left : 1%;
+	padding-right : 1%;
+	border-radius : 10px;	
+}
+
+.commentitem2 {
+	
+	border-style : solid;
+	border-color : #166004;
+	text-align : left;
+	margin : 0.5% 1% 0.5% 1%;
+	background-color : white;	
+	width : 98%;
+	padding-left : 1%;
+	padding-right : 1%;
+	border-radius : 10px;	
+}
+
+
+
+
+
+
+
+
+
 /* #tbcommentcol {
 	width : 100px;
 }

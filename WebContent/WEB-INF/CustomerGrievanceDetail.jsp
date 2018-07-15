@@ -49,7 +49,7 @@
 				
 				<div style="height:20px;" id="khalidiv" class="p-2"></div>
 				
-				<c:if test="${agentstatus == 'closed'}">
+				<c:if test="${userstatus == 'closed'}">
 				<button class="btn btn-primary" id="openclosegrdiv">Reopen !</button>
 				</c:if>
 				
@@ -91,23 +91,73 @@
 		<tbody>
 		<c:forEach var="i" begin="1" end="${comments.size()}">
 		<tr id="tbcommentrow">
+		
+		
+		
+		
+		<c:if test = "${comments[i-1][3] == 'normal'}" >
 			<td id="tbcommentcol">
 				<div class="commentitem">
 					<c:if test = "${comments[i-1][2] == 'customer'}" >
-							<div id="commenthead" style="color : #e2b616; text-align : right"><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][4]}</b></div>
+							<div id="commenthead" style="color : #e2b616; text-align : right"><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][5]}</b></div>
 							<div id="commentbody" style="font-size : 20px;  text-align : right">
-								${comments[i-1][3]}
+								${comments[i-1][4]}
 							</div>
-					 	</c:if>
+					</c:if>
 	
-				<c:if test = "${comments[i-1][2] == 'agent'}">
-							<div id="commenthead" style="color : #f9186f; "><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][4]}</b></div>
+					<c:if test = "${comments[i-1][2] == 'agent'}">
+							<div id="commenthead" style="color : #f9186f; "><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][5]}</b></div>
 							<div id="commentbody" style="font-size : 20px; ">
-								${comments[i-1][3]}
+								${comments[i-1][4]}
 							</div>
-					    </c:if>
+					</c:if>
 				</div>
 			</td>
+		</c:if>
+			
+		<c:if test = "${comments[i-1][3] == 'closed'}" >
+			<td id="tbcommentcol">
+				<div class="commentitem2" style="background-color : white">
+					<c:if test = "${comments[i-1][2] == 'customer'}" >
+							<div id="commenthead" style="color : #e2b616; text-align : right"><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][5]}</b></div>
+							<div id="commentbody" style="font-size : 20px;  text-align : right">
+								${comments[i-1][4]}
+							</div>
+					</c:if>
+	
+					<c:if test = "${comments[i-1][2] == 'agent'}">
+							<div id="commenthead" style="color : #f9186f; "><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][5]}</b></div>
+							<div id="commentbody" style="font-size : 20px; ">
+								${comments[i-1][4]}
+							</div>
+					</c:if>
+				</div>
+			</td>
+		</c:if>
+		
+		<c:if test = "${comments[i-1][3] == 'reopen'}" >
+			<td id="tbcommentcol">
+				<div class="commentitem1" style="background-color : white">
+					<c:if test = "${comments[i-1][2] == 'customer'}" >
+							<div id="commenthead" style="color : #e2b616; text-align : right"><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][5]}</b></div>
+							<div id="commentbody" style="font-size : 20px;  text-align : right">
+								${comments[i-1][4]}
+							</div>
+					</c:if>
+	
+					<c:if test = "${comments[i-1][2] == 'agent'}">
+							<div id="commenthead" style="color : #f9186f; "><b>${comments[i-1][1]}, ${comments[i-1][2]}, ${comments[i-1][5]}</b></div>
+							<div id="commentbody" style="font-size : 20px; ">
+								${comments[i-1][4]}
+							</div>
+					</c:if>
+				</div>
+			</td>
+		</c:if>
+		
+			
+			
+			
 		</tr>
 		</c:forEach>
 		</tbody>

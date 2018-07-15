@@ -50,7 +50,7 @@ public ArrayList<ArrayList> getComments(int grid){
 	
 	try {
 		Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
-		String query = "Select comment_id, user_email, user_role, comment_msg, comment_time_stamp FROM Grievance.grievance_comments WHERE gr_id="+grid;
+		String query = "Select comment_id, user_email, user_role,comment_type ,comment_msg, comment_time_stamp FROM Grievance.grievance_comments WHERE gr_id="+grid;
 		PreparedStatement stmt1=con.prepareStatement(query);
 		ResultSet rs = stmt1.executeQuery();
 		System.out.println(rs);
@@ -59,6 +59,7 @@ public ArrayList<ArrayList> getComments(int grid){
 			lista.add(rs.getString("comment_id"));
 			lista.add(rs.getString("user_email"));
 			lista.add(rs.getString("user_role"));
+			lista.add(rs.getString("comment_type"));
 			lista.add(rs.getString("comment_msg"));
 			lista.add(rs.getString("comment_time_stamp"));
 			

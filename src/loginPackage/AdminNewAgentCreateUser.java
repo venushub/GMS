@@ -30,7 +30,7 @@ public class AdminNewAgentCreateUser extends HttpServlet {
 		
         HttpSession sesh = request.getSession(false);
 
-		if( sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("admin")){
+		if(sesh != null && sesh.getAttribute("useremail") != null && sesh.getAttribute("userrole").equals("admin")){
 
 		
 		UserId uid = new UserId();
@@ -53,6 +53,7 @@ public class AdminNewAgentCreateUser extends HttpServlet {
 	        }
 	        else {
 	            request.setAttribute("error", "email already exists in our database");
+	            System.out.println("done sending errors");
 	        	request.getRequestDispatcher("/WEB-INF/AdminUserCreateNewAgent.jsp").forward(request, response);
 	        }
 	        

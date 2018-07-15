@@ -1,0 +1,19 @@
+CREATE TABLE grievance.grievance_comments
+(
+  comment_id integer NOT NULL,
+  gr_id integer NOT NULL,
+  user_email character varying(50) NOT NULL,
+  user_role character varying(15) NOT NULL,
+  comment_type character varying(10) NOT NULL,
+  comment_msg character varying(150) NOT NULL,
+  comment_time_stamp timestamp without time zone,
+  CONSTRAINT grievance_comments_pkey PRIMARY KEY (comment_id)
+)
+
+CREATE TABLE grievance.map_main
+(
+  map_id integer NOT NULL,
+  category_id integer NOT NULL,
+  user_email character varying(50) NOT NULL,
+  CONSTRAINT map_main_pkey PRIMARY KEY (map_id)
+)

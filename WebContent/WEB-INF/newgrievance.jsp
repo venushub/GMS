@@ -54,7 +54,7 @@
 						<!-- 		<option value="SUC">SUC</option>
 								<option value="LF">LF</option> -->
 							</select>
-						</div>	
+						</div>
 						<div id="grievancenotediv" class="form-group">
 					    	<label for="grievancenote" style="font-weight:bold; color : #620000">Grievance Note:</label>
 					    	<textarea name="grievancenote" rows="10" cols="30" id="grievancenote" class="form-control">

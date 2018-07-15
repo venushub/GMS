@@ -16,10 +16,16 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="./CSS/adminusermanagement.css">
-</head>
+<!-- 	<link rel="stylesheet" href="./CSS/adminusermanagement.css">
+ -->
+ 	<link rel="stylesheet" href="./CSS/agstyle.css">
+ 
+ </head>
 <body id="index">
 	<div class="container" id="agbscontainer">
+	
+	
+	
 		<div class="row" id="agrow1div">
 		<%-- 
 			<div class="col-sm-offset-12 text-center" id="agrow1co6-1">Welcome ${username}</div>
@@ -27,40 +33,40 @@
 			<div class="col-sm-6 text-right" id="agrow1co6-1"><div id="welcome">Welcome ${username}</div></div>
 			<div class="col-sm-6 text-right align-middle" id="agrow1co6-2"><div id="logoutbuttondiv"><a href="logout"><button class="button" id="logoutbutton">Logout</button></a></div></div>			
 		</div>
+			<div class="row" id="khalidiv" style="height:5%"></div>
+		<div class="row text-center" id="agrow2div">
 		
-		
-			<div class="row" id="khalidiv" style="height:10%"></div>
-	
-		<div class="row " id="agrow2div">
-		<div class="col-sm-2">
-				<svg width =65 height = 55>
-				<a href="adminusermgmt">
-            		<polygon id="backarrow" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#620000" stroke="#620000" stroke-width="2" />
-        		</a>
-        		</svg>
-		</div>
-		<div class="col-sm-2"></div>
-			<div class="col-sm-4">
-				<form action="adminnewagentuserregister" method="post">
-						<div class="form-group">
-							<label for="name" style="font-weight:bold; color : #620000">Agent Good Name</label>
-					    	<input class="form-control" type="text" name="name" id="name">
-					    </div>
-						<div class="form-group">
-							<label for="username" style="font-weight:bold; color : #620000">Agent Email as Username</label>
-					    	<input class="form-control" type="email" name="email" id="email">
-					    </div>
-					    <div class="form-group">
-					    	<label for="password" style="font-weight:bold; color : #620000">Set Password:</label>
-					    	<input class="form-control" type="password" name="password" id="password">
-					    </div>
-					    <button type="submit" class="btn btn-primary" id="submitbutton" value="login" >Submit</button>
-					</form>
+			<div class="col-sm-2">
+					<svg width =65 height = 55>
+					<a href="adminhome">
+	            		<polygon id="backarrow" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#620000" stroke="#620000" stroke-width="2" />
+	        		</a>
+	        		</svg>
 			</div>
-			<div class="col-sm-4"></div>
+		
+		<div class="col-sm-4"  id="addcategoryrow2catlistdiv">
+			<div id="tablediv" class="table table-responsive">
+			<table class="tablemain">
+			<thead>
+			<tr id="tableheaderrow">
+				<th id="tableheadercolumn">Existing Categories</th>
+			</tr>
+			</thead>
+			<tbody>
+			<c:forEach var="i" begin="1" end="${categories.size()}">
+				<tr id="tablerow" onmouseover="func1(this)" onmouseout="func2(this)">
+						<td id="tablecolumn">
+							${categories[i-1]}
+						</td>
+				</tr>
+			</c:forEach>
+			</tbody>
+			</table>
+			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-12 text-center" ><p style="color:red">${error}</p></div>
+			<div class="col-sm-4 d-flex flex-column align-items-center align-self-center" id="agentcol6-2" >
+	
+			</div>
 		</div>
 		
 		<div class="row" id="footerdiv">
@@ -68,29 +74,10 @@
 		</div>
 	</div>
 </body>
-<script>
+<!-- <script type="text/javascript" src="./JS/adminusermanagement.js"></script>
+ -->
+ 	<script type="text/javascript" src="./JS/addcategory.js"></script>
+ 	
 
-	document.getElementById("backarrow").addEventListener("mouseover", changeme4);
-	document.getElementById("backarrow").addEventListener("mouseout", rechangeme4 );
-	
-	function changeme4(){
-	    document.getElementById("backarrow").setAttribute("fill" , "#9f0000");
-	}
-	
-	function rechangeme4(){
-	    document.getElementById("backarrow").setAttribute("fill" , "#620000");
-	}
-	
-	 document.getElementById("submitbutton").addEventListener("mouseover", changeme);
-	 document.getElementById("submitbutton").addEventListener("mouseout", rechangeme);
 
-	 function changeme(){
-		 document.getElementById("submitbutton").style.backgroundColor = "#9f0000";
-	 }
-	 
-	 function rechangeme(){
-		 document.getElementById("submitbutton").style.backgroundColor = "#620000";
-	 }
-	 
-</script>
 </html>
