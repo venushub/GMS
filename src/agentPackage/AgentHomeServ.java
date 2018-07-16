@@ -1,8 +1,10 @@
 package agentPackage;
 
 import java.io.IOException;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,6 +19,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import newPackage.CheckMappingC2A;
 
 
 @WebServlet("/agenthome")
@@ -38,8 +42,22 @@ public class AgentHomeServ extends HttpServlet {
 		row.add("four");
 		tableelems.add(row);
 		}*/
+        CheckMappingC2A cmc2a = new CheckMappingC2A();
+        ArrayList<String> carl = cmc2a.getMappingsForAgent(sesh.getAttribute("useremail").toString());
+        String subquery = "";
+        
+        for (String s : carl){
+        	subquery = subquery + "'"+s+"'"+",";
+        }
+        
+        int strngl = subquery.length();
+        StringBuilder sb = new StringBuilder(subquery);
+        sb.deleteCharAt(strngl-1);
+        subquery = sb.toString();
+        
         
         try {
+        	
 	           Class.forName("org.postgresql.Driver");
 	    } catch (ClassNotFoundException e) {
 	           System.out.println("Class not found " + e);
@@ -48,8 +66,15 @@ public class AgentHomeServ extends HttpServlet {
 		try {
 	/*	int i = 1;*/
 		Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
-		Statement stmt=con.createStatement();
-		ResultSet rs = stmt.executeQuery("select gr_id, user_email, gr_type, gr_msg, gr_time_stamp, agent_status from Grievance.grievance_main");
+		String query = "select gr_id, user_email, gr_type, gr_msg, gr_time_stamp, agent_status from Grievance.grievance_main WHERE gr_type IN ("+subquery+")";
+		
+		PreparedStatement stmt=con.prepareStatement(query);
+		
+		/*stmt.setString(1 , subquery);*/
+		
+		ResultSet rs = stmt.executeQuery();	
+
+		
 		while(rs.next()){
 			ArrayList<String> row = new ArrayList<String>();
 	/*		row.add(Integer.toString(i));*/
@@ -76,9 +101,6 @@ public class AgentHomeServ extends HttpServlet {
 		
 		request.setAttribute("tableelems", tableelems);
 		
-		
-		
-	
 			request.getRequestDispatcher("/WEB-INF/AgentHome.jsp").forward(request, response);
 		} else {
 			response.sendRedirect("login");

@@ -481,6 +481,43 @@
 	margin-left : 8%;
 	height:480px;
 	padding : 0px;
+}
+
+
+.addagenttocatbutton {
+	background-color : #620000;
+	border-style : none;
+	color : #e2b616;
+}
+
+.addagenttocatbutton:hover {
+	background-color : white;
+	color: #620000;
+}
+
+
+#addmapc2a{
+	border-style:solid;
+	border-color : #620000;
+	border-right-width : 0px;
+    border-left-width: 0px;
+    border-bottom-width : 0px; 
+    margin-bottom : 10px;
+  	
+}
+
+
+#deletebuttontd{
+	width : 20%;
+}
+
+
+#deletebutton{
 	
-	
+	background-color : white;
+	border-color : #C70039;
+	border-radius : 6px;
+	border-shading : 0px;
+	border-style : solid;
+
 }

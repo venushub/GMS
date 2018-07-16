@@ -18,7 +18,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- 	<link rel="stylesheet" href="./CSS/adminusermanagement.css">
  -->
- 	<link rel="stylesheet" href="./CSS/agstyle.css">
+ 	<link rel="stylesheet" href="./CSS/adminmapc2a.css">
  
  </head>
 <body id="index">
@@ -38,7 +38,7 @@
 		
 			<div class="col-sm-2">
 					<svg width =65 height = 55>
-					<a href="adminhome">
+					<a href="admindatamgmt">
 	            		<polygon id="backarrow" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#620000" stroke="#620000" stroke-width="2" />
 	        		</a>
 	        		</svg>
@@ -54,19 +54,78 @@
 			</thead>
 			<tbody>
 			<c:forEach var="i" begin="1" end="${categories.size()}">
-				<tr id="tablerow" onmouseover="func1(this)" onmouseout="func2(this)">
-						<td id="tablecolumn">
-							${categories[i-1]}
-						</td>
-				</tr>
+				
+				<c:if test="${categories[i-1] ne selected_cat}">
+					<tr id="tablerow" onmouseover="func1(this)" onmouseout="func2(this)">
+							<td id="tablecolumn" class="tablehyper">
+							<a href="getowners?cat_name=${categories[i-1]}" id="tablelink"><b>	${categories[i-1]} </b></a>
+							</td>
+					</tr>
+				</c:if>
+				<c:if test="${categories[i-1] == selected_cat}">
+					<tr id="tablerow" >
+							<td id="tablecolumn" class="tablehyper" style="background-color: #400101;">
+							<a href="getowners?cat_name=${categories[i-1]}" id="tablelink"><b>	${categories[i-1]} </b></a>
+							</td>
+					</tr>
+				</c:if>
+				
+				
 			</c:forEach>
 			</tbody>
 			</table>
 			</div>
 		</div>
-			<div class="col-sm-4 d-flex flex-column align-items-center align-self-center" id="agentcol6-2" >
-	
+		<div class="col-sm-4 d-flex flex-column" id="mapc2adiv" >
+<!-- 		<div id="ownerstablediv" style="width:100px; padding:0px; margin:0px; border:0px">
+
+ -->
+ 		<div id="tablediv" class="table table-responsive">
+ 		<table class="tablemain">
+			<thead>
+				<tr id="tableheaderrow">
+					<th id="tableheadercolumn">Owners</th>
+					<th id="tableheadercolumn">Delete</th>
+ 				</tr>
+			</thead>
+				<tbody id="agentaddtbody">
+				<c:forEach var="i" begin="1" end="${owners.size()}">
+					<tr id="tablerow" onmouseover="func1(this)" onmouseout="func2(this)">
+							<td id="tablecolumn">
+								${owners[i-1]}
+							</td>
+							<td id="deletebuttontd"><form action="deletemapc2a" method="post"><input type="hidden" value="${selected_cat}" name="selected_cat"><input type="hidden" value="${owners[i-1]}" name="agent_to_delete"><button id="deletebutton"><b style="color: #C70039">Delete</b></button></form></td>
+					</tr>
+				</c:forEach>
+				</tbody>
+			</table>
 			</div>
+			
+		<div id="addmapc2a" >
+		
+ 	<!-- 	<div id="closeaddmapc2adiv" style="text-align : right; margin-bottom: 10px; margin-right:10px;color : #620010">
+	 		<svg height="28px" width="30px" style="background-color: white" id="hidecloseaddmapc2adiv">
+				<polygon id="commentclick" points="6,6 26,6 16,20" fill="#e2b616" stroke="#e2b616" stroke-width="1" />
+			</svg>
+ 		</div>
+  -->
+ 		<div style="margin-top: 10px;">	
+		<form action="addmapc2a" method="post">
+			<div class="form-group" style="width:80%; margin-left : 30px;">
+				<input type="text"	 name="agent_name" class="form-control">
+				<input type="hidden" value="${selected_cat}" name="selected_cat">
+			</div>
+		<button type="submit" class="btn btn-primary" value="login" id="submitbutton">Add</button>
+		</form>
+		<div style="color:red; margin-top:10px;">
+		${error}
+		</div>
+		</div>	
+		</div>
+<!-- 		</div>	
+ -->				
+			
+		</div>
 		</div>
 		
 		<div class="row" id="footerdiv">
@@ -76,7 +135,7 @@
 </body>
 <!-- <script type="text/javascript" src="./JS/adminusermanagement.js"></script>
  -->
- 	<script type="text/javascript" src="./JS/addcategory.js"></script>
+ 	<script type="text/javascript" src="./JS/mapc2a.js"></script>
  	
 
 

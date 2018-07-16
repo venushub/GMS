@@ -1,0 +1,73 @@
+CREATE TABLE grievance.category_main
+(
+  category_id integer NOT NULL,
+  category_name character varying(50) NOT NULL,
+  user_email character varying(50) NOT NULL,
+  created_time_stamp timestamp without time zone,
+  CONSTRAINT category_main_pkey PRIMARY KEY (category_id)
+)
+
+/////////////////////////////////////////////
+
+CREATE TABLE grievance.grievance_comments
+(
+  comment_id integer NOT NULL,
+  gr_id integer NOT NULL,
+  user_email character varying(50) NOT NULL,
+  user_role character varying(15) NOT NULL,
+  comment_type character varying(10) NOT NULL,
+  comment_msg character varying(150) NOT NULL,
+  comment_time_stamp timestamp without time zone,
+  CONSTRAINT grievance_comments_pkey PRIMARY KEY (comment_id)
+)
+
+/////////////////////////////////////////////////
+
+CREATE TABLE grievance.grievance_main
+(
+  gr_id integer NOT NULL,
+  user_email character varying(50) NOT NULL,
+  gr_type character(15),
+  gr_msg character varying(150),
+  gr_time_stamp timestamp without time zone,
+  agent_status character varying(20) NOT NULL,
+  user_status character varying(20) NOT NULL,
+  CONSTRAINT grievance_main_pkey PRIMARY KEY (gr_id)
+)
+
+/////////////////////////////////////////////////////
+
+CREATE TABLE grievance.map_main
+(
+  category_name character varying(50) NOT NULL,
+  user_email character varying(50) NOT NULL,
+  CONSTRAINT map_main_pkey PRIMARY KEY (category_name, user_email)
+)
+
+//////////////////////////////////////////////////////
+
+CREATE TABLE grievance.user_main
+(
+  user_id integer NOT NULL,
+  user_name character varying(50) NOT NULL,
+  user_email character varying(50) NOT NULL,
+  user_password character varying(50) NOT NULL,
+  user_role character varying(10) NOT NULL,
+  gr_time_stamp timestamp without time zone,
+  CONSTRAINT user_main_pkey PRIMARY KEY (user_email)
+)
+
+/////////////////////////////////////////////////////
+
+CREATE TABLE grievance.workflow_main
+(
+  wf_id integer NOT NULL,
+  gr_id integer NOT NULL,
+  who_changed character varying(50) NOT NULL,
+  what_changed character varying(50) NOT NULL,
+  when_changed character varying(150),
+  gr_time_stamp timestamp without time zone,
+  previous_value character varying(150) NOT NULL,
+  present_value character varying(150) NOT NULL,
+  CONSTRAINT workflow_main_pkey PRIMARY KEY (wf_id)
+)

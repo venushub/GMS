@@ -168,10 +168,7 @@
 <!-- 		<div style="background-color : white; padding:0px; color : #620000 ; font-size : 20px;border-color : #620000 ; border-style:solid; float:left"><b>Make Comment</b></div>
  -->		<div style="border-color : white ; border-style:solid;float:right">
 		<svg height="28px" width="30px" style="background-color: white" id="hidecommentdiv">
-		
 			<polygon id="commentclick" points="6,6 26,6 16,20" fill="#e2b616" stroke="#e2b616" stroke-width="1" />
-			
-		
 		</svg>
 <!-- 		<button id="hidebutton">hide</button>
  -->		</div>

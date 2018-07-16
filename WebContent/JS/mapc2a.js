@@ -50,6 +50,20 @@ window.onresize = function() {
 };*/
 
 
+$(document).ready(function(){
+	$('#addagenttocatbutton').on('click', function(event) {     	
+	    $('#addmapc2a').show();
+	});   
+	
+	$('#hidecloseaddmapc2adiv').on('click', function(event) {     	
+	    $('#addmapc2a').hide();
+	});   
+	
+	
+	
+	
+});
+
 
 document.getElementById("backarrow").addEventListener("mouseover", changeme4);
 document.getElementById("backarrow").addEventListener("mouseout", rechangeme4 );
