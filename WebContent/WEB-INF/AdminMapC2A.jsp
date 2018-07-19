@@ -33,10 +33,9 @@
 			<div class="col-sm-6 text-right" id="agrow1co6-1"><div id="welcome">Welcome ${username}</div></div>
 			<div class="col-sm-6 text-right align-middle" id="agrow1co6-2"><div id="logoutbuttondiv"><a href="logout"><button class="button" id="logoutbutton">Logout</button></a></div></div>			
 		</div>
-			<div class="row" id="khalidiv" style="height:5%"></div>
 		<div class="row text-center" id="agrow2div">
 		
-			<div class="col-sm-2">
+			<div class="col-sm-2" style="height:100px;">
 					<svg width =65 height = 55>
 					<a href="admindatamgmt">
 	            		<polygon id="backarrow" points="1,25 30,0 30,15 60,15 60,35 30,35 30,50" fill="#620000" stroke="#620000" stroke-width="2" />
@@ -101,7 +100,7 @@
 			</table>
 			</div>
 			
-		<div id="addmapc2a" >
+		<div id="addmapc2a1" >
 		
  	<!-- 	<div id="closeaddmapc2adiv" style="text-align : right; margin-bottom: 10px; margin-right:10px;color : #620010">
 	 		<svg height="28px" width="30px" style="background-color: white" id="hidecloseaddmapc2adiv">
@@ -109,7 +108,7 @@
 			</svg>
  		</div>
   -->
- 		<div style="margin-top: 10px;">	
+ 		<div style="margin-top: 10px;">
 		<form action="addmapc2a" method="post">
 			<div class="form-group" style="width:80%; margin-left : 30px;">
 				<input type="text"	 name="agent_name" class="form-control">

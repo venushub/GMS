@@ -96,8 +96,10 @@
 }
 
 #agrow2div {
+	margin-top : 10px;
 	border-style : solid;
 	border-color: white;
+	margin-bottom : 10px;
 }
 
 #agrow2col6-1 {
@@ -454,6 +456,7 @@
 #addcategoryrow2catlistdiv {
 	
 	margin-top : 5%;
+	margin-bottom : 5%;
 	border-color: #620000;
 	border-style: solid;
 	padding : 0px;
@@ -481,6 +484,8 @@
 	margin-left : 8%;
 	height:480px;
 	padding : 0px;
+	margin-bottom : 20px;
+	
 }
 
 
@@ -496,13 +501,13 @@
 }
 
 
-#addmapc2a{
+#addmapc2a1{
 	border-style:solid;
 	border-color : #620000;
 	border-right-width : 0px;
     border-left-width: 0px;
     border-bottom-width : 0px; 
-    margin-bottom : 10px;
+    margin-bottom : 0px;
   	
 }
 
