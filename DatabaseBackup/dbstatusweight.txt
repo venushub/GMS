@@ -1,0 +1,35 @@
+CREATE TABLE grievance.grievance_main
+(
+  gr_id integer NOT NULL,
+  user_email character varying(50) NOT NULL,
+  gr_type character(15),
+  gr_msg character varying(150),
+  gr_time_stamp timestamp without time zone,
+  status character varying(20) NOT NULL,
+  status_weight integer NOT NULL,
+  CONSTRAINT grievance_main_pkey PRIMARY KEY (gr_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE grievance.grievance_main
+  OWNER TO postgres;
+  
+  ///////////////////////////////////////
+  
+  CREATE TABLE grievance.grievance_comments
+(
+  comment_id integer NOT NULL,
+  gr_id integer NOT NULL,
+  user_email character varying(50) NOT NULL,
+  user_role character varying(15) NOT NULL,
+  comment_type character varying(10) NOT NULL,
+  comment_msg character varying(150) NOT NULL,
+  comment_time_stamp timestamp without time zone,
+  CONSTRAINT grievance_comments_pkey PRIMARY KEY (comment_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE grievance.grievance_comments
+  OWNER TO postgres;
