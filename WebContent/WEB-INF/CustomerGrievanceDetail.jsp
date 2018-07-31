@@ -44,12 +44,12 @@
 				<div><h3>${timestamp}</h3></div>
 				
 				<div style="color : #e2b616"><b>Status</b></div>
-				<div><h3>${userstatus}</h3></div>
+				<div><h3>${status}, ${statusweight}</h3></div>
 				
 				
 				<div style="height:20px;" id="khalidiv" class="p-2"></div>
 				
-				<c:if test="${userstatus == 'closed'}">
+				<c:if test="${status == 'closed'}">
 				<button class="btn btn-primary" id="openclosegrdiv">Reopen !</button>
 				</c:if>
 				
@@ -194,7 +194,7 @@
 		</div>
 		</div>
 		
-		<c:if test="${userstatus ne 'closed'}">
+		<c:if test="${status ne 'closed'}">
 		
  		<div id="entermessage2" >
  			<svg height="100%" width="100%" style="background-color : white">

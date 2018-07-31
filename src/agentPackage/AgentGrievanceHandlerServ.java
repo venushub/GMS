@@ -38,8 +38,8 @@ public class AgentGrievanceHandlerServ extends HttpServlet {
 	
 	GrievanceData gd = new GrievanceData();
 	gd.getSetGrievanceData(grida);
-	String prevagentstatus = gd.get_agent_status();
-	String prevuserstatus = gd.get_user_status();
+	String prevstatus = gd.get_status();
+	int prevstatusweight = gd.get_status_weight();
 	String action = request.getParameter("whataction");
 	String comment = request.getParameter("grievancecomment");
 	String userrole = "agent";
@@ -48,7 +48,7 @@ public class AgentGrievanceHandlerServ extends HttpServlet {
 	int gr_id = Integer.parseInt(grid);
 	
 	GrievanceHandle gh = new GrievanceHandle();
-	gh.addComment(comment, useremail, userrole, gr_id, action, prevagentstatus, prevuserstatus);
+	gh.addComment(comment, useremail, userrole, gr_id, action, prevstatus, prevstatusweight);
 	
 	String redirectpage = "agentgrievancedetail?gr_id="+grid;
 	

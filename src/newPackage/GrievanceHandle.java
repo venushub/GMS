@@ -13,7 +13,7 @@ import newPackage.CommentsId;
 public class GrievanceHandle {
 	
 	
-	public void addComment(String comment, String agentuser, String userrole ,int gr_id , String action, String prevagentstatus, String prevuserstatus) {
+	public void addComment(String comment, String agentuser, String userrole ,int gr_id , String action, String prevstatus, int prevstatusweight) {
 		
 		
 		CommentsId cid = new CommentsId();
@@ -65,45 +65,46 @@ public class GrievanceHandle {
 			
 			
 		
-			String query2 = "UPDATE Grievance.grievance_main SET agent_status = ? , user_status = ? WHERE gr_id = ?";
+			String query2 = "UPDATE Grievance.grievance_main SET status = ? , status_weight = ? WHERE gr_id = ?";
 			PreparedStatement stmt2=con.prepareStatement(query2);
 			
 			
 			if(userrole.equals("agent")){
 				
 				
-				if(prevagentstatus.equals("open")){
-					if(action.equals("comment")){
-						stmt2.setString(1, "commented");
-						stmt2.setString(2, "commented");
-					}
-					
-					if(action.equals("close")){
-						stmt2.setString(1, "closed");
-						stmt2.setString(2, "closed");
-					}
-					
-				} else if(prevagentstatus.equals("commented")){
+				if(prevstatus.equals("open")){
 					
 					if(action.equals("comment")){
 						stmt2.setString(1, "commented");
-						stmt2.setString(2, "commented");
+						stmt2.setInt(2, prevstatusweight+1);
 					}
 					
 					if(action.equals("close")){
 						stmt2.setString(1, "closed");
-						stmt2.setString(2, "closed");
+						stmt2.setInt(2, prevstatusweight+1);
 					}
-				} else if(prevagentstatus.equals("reopen")) {
+					
+				} else if(prevstatus.equals("commented")){
 					
 					if(action.equals("comment")){
-						stmt2.setString(1, "recommented");
-						stmt2.setString(2, "recommented");
+						stmt2.setString(1, "commented");
+						stmt2.setInt(2, prevstatusweight+1);
 					}
 					
 					if(action.equals("close")){
 						stmt2.setString(1, "closed");
-						stmt2.setString(2, "closed");
+						stmt2.setInt(2, prevstatusweight+1);
+					}
+				} else if(prevstatus.equals("reopen")) {
+					
+					if(action.equals("comment")){
+						stmt2.setString(1, "commented");
+						stmt2.setInt(2, prevstatusweight+1);
+					}
+					
+					if(action.equals("close")){
+						stmt2.setString(1, "closed");
+						stmt2.setInt(2, prevstatusweight+1);
 					}
 					
 				} else {
@@ -114,35 +115,35 @@ public class GrievanceHandle {
 			}
 			
 			if(userrole.equals("customer")){
-				
-				
-				if(prevuserstatus.equals("open")){
+					
+					
+				if(prevstatus.equals("open")){
 					if(action.equals("comment")){
 						stmt2.setString(1, "open");
-						stmt2.setString(2, "open");
+						stmt2.setInt(2, prevstatusweight+1);
 					}
-			
-				} else if(prevuserstatus.equals("commented")){
+					
+				} else if(prevstatus.equals("commented")){
 					
 					if(action.equals("comment")){
 						stmt2.setString(1, "open");
-						stmt2.setString(2, "open");
+						stmt2.setInt(2, prevstatusweight+1);
 					}
 					
-				} else if(prevuserstatus.equals("reopen")) {
+				} else if(prevstatus.equals("reopen")) {
 					
 					if(action.equals("comment"))
 					{
 						stmt2.setString(1, "reopen");
-						stmt2.setString(2, "reopen");
+						stmt2.setInt(2, prevstatusweight+1);
 					}
 							
-				} else if(prevuserstatus.equals("closed")){
+				} else if(prevstatus.equals("closed")){
 					
 					if(action.equals("reopen"))
 					{
 						stmt2.setString(1, "reopen");
-						stmt2.setString(2, "reopen");
+						stmt2.setInt(2, prevstatusweight+1);
 					}
 					
 				}	else {
@@ -153,7 +154,7 @@ public class GrievanceHandle {
 					if(action.equals("comment"))
 					{
 						stmt2.setString(1, "reopen");
-						stmt2.setString(2, "reopen");
+						stmt2.setInt(2, prevstatusweight+1);
 					}
 				}
 			}

@@ -53,7 +53,7 @@ public class HomepageServ extends HttpServlet {
 		try {
 		Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
 		Statement stmt=con.createStatement();
-		ResultSet rs = stmt.executeQuery("select gr_id, gr_type, gr_msg, gr_time_stamp, user_status from Grievance.grievance_main WHERE user_email="+"'"+useremail+"'");
+		ResultSet rs = stmt.executeQuery("select gr_id, gr_type, gr_msg, gr_time_stamp, status, status_weight from Grievance.grievance_main WHERE user_email="+"'"+useremail+"'");
 		while(rs.next()){
 			ArrayList<String> row = new ArrayList<String>();
 			row.add(rs.getString("gr_id"));
@@ -64,7 +64,8 @@ public class HomepageServ extends HttpServlet {
 			String formattedString = localDate.format(formatter);
 			
 			row.add(formattedString);
-			row.add(rs.getString("user_status"));
+			row.add(rs.getString("status"));
+			row.add(rs.getString("status_weight"));
 			tableelems.add(row);
 		}
 	    con.close();

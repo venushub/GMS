@@ -66,7 +66,7 @@ public class AgentHomeServ extends HttpServlet {
 		try {
 	/*	int i = 1;*/
 		Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
-		String query = "select gr_id, user_email, gr_type, gr_msg, gr_time_stamp, agent_status from Grievance.grievance_main WHERE gr_type IN ("+subquery+")";
+		String query = "select gr_id, user_email, gr_type, gr_msg, gr_time_stamp, status, status_weight from Grievance.grievance_main WHERE gr_type IN ("+subquery+")";
 		
 		PreparedStatement stmt=con.prepareStatement(query);
 		
@@ -88,7 +88,8 @@ public class AgentHomeServ extends HttpServlet {
 			
 			row.add(formattedString);
 		/*	i++;*/
-			row.add(rs.getString("agent_status"));
+			row.add(rs.getString("status"));
+			row.add(rs.getString("status_weight"));
 			tableelems.add(row);
 			
 		}

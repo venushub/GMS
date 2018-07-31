@@ -46,6 +46,7 @@ public class CreateNewGrievanceServ extends HttpServlet {
 		*/
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
        /* System.out.println(timestamp);*/
+		int status_weight = 1;
 		try {
 	           Class.forName("org.postgresql.Driver");
 	    } catch (ClassNotFoundException e) {
@@ -56,7 +57,7 @@ public class CreateNewGrievanceServ extends HttpServlet {
 		Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
 		/*String query = "INSERT INTO Grievance.grievance_main(gr_id,user_id,gr_type,gr_msg,gr_time_stamp) VALUES("+ gr_id + "," + userid + "," +"'"+ category+"'"+"," +"'"+ grievancenote +"'"+","+"'"+ localDate+"'"+")";
 		*/
-		String query = "INSERT INTO Grievance.grievance_main(gr_id,user_email,gr_type,gr_msg,gr_time_stamp,agent_status,user_status) VALUES(?,?,?,?,?,?,?)";
+		String query = "INSERT INTO Grievance.grievance_main(gr_id,user_email,gr_type,gr_msg,gr_time_stamp,status,status_weight) VALUES(?,?,?,?,?,?,?)";
 		PreparedStatement prstmt = con.prepareStatement(query);
 		prstmt.setInt(1, gr_id);
 		prstmt.setString(2, useremail);
@@ -64,18 +65,19 @@ public class CreateNewGrievanceServ extends HttpServlet {
 		prstmt.setString(4, grievancenote);
 		prstmt.setTimestamp(5, timestamp);
 		prstmt.setString(6, "open");
-		prstmt.setString(7, "open");
+		prstmt.setInt(7, status_weight);
 		prstmt.executeUpdate();
 		
 		
-		String query1 = "INSERT INTO Grievance.grievance_comments(comment_id,gr_id,user_email,user_role,comment_msg,comment_time_stamp) VALUES(?,?,?,?,?,?)";
+		String query1 = "INSERT INTO Grievance.grievance_comments(comment_id,gr_id,user_email,user_role,comment_type,comment_msg,comment_time_stamp) VALUES(?,?,?,?,?,?,?)";
 		PreparedStatement prstmt1 = con.prepareStatement(query1);
 		prstmt1.setInt(1, com_id);
 		prstmt1.setInt(2, gr_id);
 		prstmt1.setString(3, useremail);
 		prstmt1.setString(4, sesh.getAttribute("userrole").toString());
-		prstmt1.setString(5, grievancenote);
-		prstmt1.setTimestamp(6, timestamp);
+		prstmt1.setString(5,  "normal");
+		prstmt1.setString(6, grievancenote);
+		prstmt1.setTimestamp(7, timestamp);
 		prstmt1.executeUpdate();
 
 	    con.close();

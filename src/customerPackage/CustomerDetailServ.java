@@ -45,7 +45,8 @@ public class CustomerDetailServ extends HttpServlet {
 	request.setAttribute("grtype", gd.get_gr_type());
 	request.setAttribute("grmsg", gd.get_gr_msg());
 	request.setAttribute("timestamp", gd.get_timestamp());
-	request.setAttribute("userstatus", gd.get_user_status());
+	request.setAttribute("status", gd.get_status());
+	request.setAttribute("statusweight", gd.get_status_weight());
 	request.setAttribute("comments", cid.getComments(grid));
 	request.setAttribute("grid", grid);
 		request.getRequestDispatcher("/WEB-INF/CustomerGrievanceDetail.jsp").forward(request, response);

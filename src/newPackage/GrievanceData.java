@@ -16,8 +16,8 @@ public class GrievanceData {
 	String gr_msg = new String();
 /*	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 */	String timestamp = new String();
-	String agent_status = new String();
-	String user_status = new String();
+	String status = new String();
+	int status_weight;
 	
 	public String get_user_email(){
 		return user_email;
@@ -35,12 +35,12 @@ public class GrievanceData {
 		return timestamp;
 	}
 
-	public String get_agent_status(){
-		return agent_status;
+	public String get_status(){
+		return status;
 	}
 	
-	public String get_user_status(){
-		return user_status;
+	public int get_status_weight(){
+		return status_weight;
 	}
 	
 	public void getSetGrievanceData(int grid) {	
@@ -52,7 +52,7 @@ public class GrievanceData {
 		
 		try {
 			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GMS","postgres","nsdl@123");
-			String query = "Select user_email, gr_type, gr_msg, gr_time_stamp, agent_status, user_status FROM Grievance.grievance_main WHERE gr_id="+grid;
+			String query = "Select user_email, gr_type, gr_msg, gr_time_stamp, status, status_weight FROM Grievance.grievance_main WHERE gr_id="+grid;
 			PreparedStatement stmt=con.prepareStatement(query);
 			ResultSet rs = stmt.executeQuery();
 			System.out.println(rs);
@@ -61,8 +61,8 @@ public class GrievanceData {
 				gr_type = rs.getString(2).toString();
 				gr_msg = rs.getString(3).toString();
 				timestamp = rs.getTimestamp(4).toString();
-				agent_status = rs.getString(5).toString();
-				user_status = rs.getString(5).toString();
+				status = rs.getString(5).toString();
+				status_weight = rs.getInt(6);
 			}
 		    con.close();
 			} catch (SQLException e) {
